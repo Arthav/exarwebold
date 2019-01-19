@@ -14,7 +14,7 @@ class CreateDtransactionsTable extends Migration
     public function up()
     {
         Schema::create('dtransactions', function (Blueprint $table) {
-            $table->increments('id')();
+            $table->increments('id');
             $table->Integer('co_broke')->nullable();
             $table->Integer('co_sell')->nullable();
             $table->Integer('co_buy')->nullable();
@@ -23,9 +23,9 @@ class CreateDtransactionsTable extends Migration
             $table->Integer('final_commission')->nullable();
             $table->Integer('delet')->default('0');
             $table->unsignedInteger('id_mtransactions')->nullable();
-            $table->foreign('id_mtransactions')->references('id')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_mtransactions')->references('id')->on('mtransactions')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedInteger('id_mlistings')->nullable();
-            $table->foreign('id_mlistings')->references('id')->on('listings')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('id_mlistings')->references('id')->on('mlistings')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
