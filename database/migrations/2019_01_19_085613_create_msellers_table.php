@@ -15,11 +15,11 @@ class CreateMsellersTable extends Migration
     {
         Schema::create('msellers', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('type')->nullable();
-            $table->int('delet')->nullable();
+            $table->Integer('type')->nullable();
+            $table->Integer('delet')->nullable();
 
-            $table->unsignedInteger('id_dtrans')->nullable();
-            $table->foreign('id_dtrans')->references('id')->on('dtransactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('id_dtransaction')->nullable();
+            $table->foreign('id_dtransaction')->references('id')->on('dtransactions')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedInteger('id_users')->nullable();
             $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             

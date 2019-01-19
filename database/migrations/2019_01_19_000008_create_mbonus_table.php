@@ -15,10 +15,10 @@ class CreateMbonusTable extends Migration
     {
         Schema::create('mbonus', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('bonus')->nullable();
+            $table->Integer('bonus')->nullable();
             $table->string('nama_bonus')->nullable();
             $table->longText('deskripsi')->nullable();
-            $table->int('delet')->default('0');
+            $table->Integer('delet')->default('0');
             $table->timestamps();
         });
     }

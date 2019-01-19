@@ -15,17 +15,17 @@ class CreateDtransactionsTable extends Migration
     {
         Schema::create('dtransactions', function (Blueprint $table) {
             $table->increments('id')();
-            $table->int('co_broke')->nullable();
-            $table->int('co_sell')->nullable();
-            $table->int('co_buy')->nullable();
-            $table->int('reference')->nullable();
+            $table->Integer('co_broke')->nullable();
+            $table->Integer('co_sell')->nullable();
+            $table->Integer('co_buy')->nullable();
+            $table->Integer('reference')->nullable();
             $table->bigInteger('close_price')->nullable();
-            $table->int('final_commission')->nullable();
-            $table->int('delet')->default('0');
-            $table->unsignedInteger('id_transactions')->nullable();
-            $table->foreign('id_transactions')->references('id')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('id_listings')->nullable();
-            $table->foreign('id_listings')->references('id')->on('listings')->onUpdate('cascade')->onDelete('cascade');
+            $table->Integer('final_commission')->nullable();
+            $table->Integer('delet')->default('0');
+            $table->unsignedInteger('id_mtransactions')->nullable();
+            $table->foreign('id_mtransactions')->references('id')->on('transactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('id_mlistings')->nullable();
+            $table->foreign('id_mlistings')->references('id')->on('listings')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

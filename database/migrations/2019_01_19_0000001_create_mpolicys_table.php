@@ -16,17 +16,17 @@ class CreateMpolicysTable extends Migration
         Schema::create('mpolicys', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
-            $table->int('commission_min')->nullable();
-            $table->int('commission_max')->nullable();
+            $table->Integer('commission_min')->nullable();
+            $table->Integer('commission_max')->nullable();
             $table->string('co_buy')->nullable();
             $table->string('co_sell')->nullable();
             $table->string('out_broke')->nullable();
             $table->string('reference')->nullable();
-            $table->int('min_sell')->nullable();
-            $table->int('split_fee')->nullable();
-            $table->int('co_fee')->nullable();
-            $table->int('reference_fee')->nullable();
-            $table->int('delete')->nullable();
+            $table->Integer('min_sell')->nullable();
+            $table->Integer('split_fee')->nullable();
+            $table->Integer('co_fee')->nullable();
+            $table->Integer('reference_fee')->nullable();
+            $table->Integer('delete')->nullable();
 
             $table->timestamps();
         });

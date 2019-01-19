@@ -15,8 +15,8 @@ class CreateMtransactionsTable extends Migration
     {
         Schema::create('mtransactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->int('property_sold')->nullable();
-            $table->int('delet')->nullable();
+            $table->Integer('property_sold')->nullable();
+            $table->Integer('delet')->nullable();
             $table->unsignedInteger('id_users')->nullable();
             $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             

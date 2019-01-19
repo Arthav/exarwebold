@@ -19,7 +19,7 @@ class CreateMleadsTable extends Migration
             $table->string('contact')->nullable();
             $table->string('email')->nullable();
             $table->string('tipe')->nullable();
-            $table->int('delet')->nullable();
+            $table->Integer('delet')->nullable();
             $table->longText('deskripsi')->nullable();
             $table->unsignedInteger('id_users')->nullable();
             $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');

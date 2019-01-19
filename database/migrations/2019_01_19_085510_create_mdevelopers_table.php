@@ -18,7 +18,7 @@ class CreateMdevelopersTable extends Migration
             $table->string('nama')->nullable();
             $table->string('kontak')->nullable();
             $table->string('email')->nullable();
-            $table->int('delet')->nullable();
+            $table->Integer('delet')->nullable();
             $table->timestamps();
         });
     }
