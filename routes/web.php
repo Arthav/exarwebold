@@ -19,3 +19,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/testing', 'HomeController@testing')->name('testing');
+
+
+//Listing
+Route::get('/listing', 'ListingController@index')->name('Listing_Default');
+Route::get('/listing/show', 'ListingController@show')->name('Listing.Show');
+
