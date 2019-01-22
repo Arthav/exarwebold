@@ -30,33 +30,36 @@
 
 
     <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
-  <!--MENU DATA KARYAWAN-->
+  <!--MENU LISTING-->
       <a onclick="myAccFunc1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn1">
-        <b>Data Karyawan</b> <i class="fa fa-caret-down"></i>
+        <b>Listing</b> <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="/karyawan" class="w3-bar-item w3-button">Karyawan</a>
+        <a href="{{ route('Listing_Default') }}" class="w3-bar-item w3-button">Daftar Listing</a>
+        <a href="#" class="w3-bar-item w3-button">Tambah Listing</a>
         <a href="{{ route('Listing.Show') }}" class="w3-bar-item w3-button">Test show</a>
       </div>
 
-    <!--MENU RECRUITMENT-->
+    <!--MENU HUMAN RESOURCE-->
       <a onclick="myAccFunc2()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn2">
         Recruitment <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="/rekrutmen" class="w3-bar-item w3-button">Permintaan Calon</a>
-        <a href="/rekrutmen/create" class="w3-bar-item w3-button">Request Calon</a>
+        {{-- <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
+        <a href="{{ route('Human.Agen.Tambah') }}" class="w3-bar-item w3-button">Tambah Agen Baru</a>
+        <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
+        <a href="{{ route('Human.Kebijakan') }}" class="w3-bar-item w3-button">Kebijakan</a> --}}
       </div>
 
-  <!--MENU ABSENSI-->
+  <!--MENU KOMISI-->
       <a onclick="myAccFunc3()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn3">
         Absensi <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="/cuti" class="w3-bar-item w3-button">Cuti</a>
-        <a href="/terlambat" class="w3-bar-item w3-button">Terlambat</a>
-        <a href="/dinasluar" class="w3-bar-item w3-button">Dinas Luar</a>
-        <a href="/potongan" class="w3-bar-item w3-button">Detail Potongan Gaji</a>
+        {{-- <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
+        <a href="{{ route('Human.Agen.Tambah') }}" class="w3-bar-item w3-button">Tambah Agen Baru</a>
+        <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
+         --}}
       </div>
 
    <!--MENU PENGATURAN-->
@@ -68,6 +71,13 @@
           <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Absensi</a>
           <a href="/pengaturan/gaji" class="w3-bar-item w3-button">Gaji</a>
           <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Inventaris</a>
+          <a href="{{ route('logout') }}" class="w3-button w3-block w3-white w3-left-align" id="myBtn5" onclick="event.preventDefault();
+				   document.getElementById('logout-form').submit();">
+	           {{ __('Logout') }}
+  		    </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              @csrf
+          </form>
         </div>
     </div>
   </nav>

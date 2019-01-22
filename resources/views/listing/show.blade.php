@@ -1,11 +1,11 @@
 @extends('layouts.master')
 
 @section('title')
-DAFTAR KARYAWAN
+Exarweb
 @endsection
 
 @section('content')
-Data Karyawan
+Listing
 @endsection
 
 

@@ -3,11 +3,11 @@
 @extends('layouts.master')
 
 @section('title')
-DAFTAR KARYAWAN
+INDEX
 @endsection
 
 @section('content')
-Data Karyawan
+INDEX
 @endsection
 
 
@@ -18,7 +18,7 @@ Data Karyawan
     <div class="w3-container w3-blue w3-padding-32">
       <div class="W3-container">
 
-        <h2>Daftar Karyawan</h2>
+        <h2>Daftar Listing INDEX</h2>
         <!--Awal Padding-->
 
 
@@ -55,6 +55,14 @@ Data Karyawan
                 <th>Tanggal Masuk</th>
                 <th>Masa Kerja</th>
               </tr>
+              @foreach($mlistings as $mlisting)
+              <tr>
+              <td>{{$mlisting->nama}}</td>
+              <td>{{$mlisting->jenis_list}}</td>
+              <td>{{$mlisting->price}}</td>
+              
+              </tr>
+              @endforeach
 
               <tr>
                 
@@ -85,6 +93,6 @@ Data Karyawan
   </div>
 
     <!-- Footer Copyright -->
-      <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Gading Murni</a> 2018</a></div>
+      <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Exari</a> 2019</a></div>
 
 @endsection

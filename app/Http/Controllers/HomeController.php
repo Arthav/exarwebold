@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Mlisting;
 
 class HomeController extends Controller
 {
@@ -23,7 +24,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        //$mlistings=mlisting::where('nama','Rumah wiyung')->get();
+        $mlistings=mlisting::all();
+        //dd($mlistings);
+        return view('listing.index',compact('mlistings'));
     }
 
     public function testing()
