@@ -17,8 +17,8 @@ class CreateMtransactionsTable extends Migration
             $table->increments('id');
             $table->Integer('property_sold')->nullable();
             $table->Integer('delet')->nullable();
-            $table->unsignedInteger('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             
             $table->timestamps();
         });

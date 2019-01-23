@@ -22,10 +22,10 @@ class CreateDtransactionsTable extends Migration
             $table->bigInteger('close_price')->nullable();
             $table->Integer('final_commission')->nullable();
             $table->Integer('delet')->default('0');
-            $table->unsignedInteger('id_mtransactions')->nullable();
-            $table->foreign('id_mtransactions')->references('id')->on('mtransactions')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('id_mlistings')->nullable();
-            $table->foreign('id_mlistings')->references('id')->on('mlistings')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('mtransaction_id')->nullable();
+            $table->foreign('mtransaction_id')->references('id')->on('mtransactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('mlisting_id')->nullable();
+            $table->foreign('mlisting_id')->references('id')->on('mlistings')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

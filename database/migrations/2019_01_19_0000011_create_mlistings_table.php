@@ -38,12 +38,12 @@ class CreateMlistingsTable extends Migration
             $table->Integer('listrik')->nullable();
             $table->Integer('delet')->nullable();
             $table->Integer('sold')->default('0');;
-            $table->unsignedInteger('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('id_mdevelopers')->nullable();
-            $table->foreign('id_mdevelopers')->references('id')->on('mdevelopers')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('id_mbonus')->nullable();
-            $table->foreign('id_mbonus')->references('id')->on('mbonus')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('mdeveloper_id')->nullable();
+            $table->foreign('mdeveloper_id')->references('id')->on('mdevelopers')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('mbonu_id')->nullable();
+            $table->foreign('mbonu_id')->references('id')->on('mbonus')->onUpdate('cascade')->onDelete('cascade');
        
             
             $table->timestamps();   

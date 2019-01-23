@@ -18,10 +18,10 @@ class CreateMsellersTable extends Migration
             $table->Integer('type')->nullable();
             $table->Integer('delet')->nullable();
 
-            $table->unsignedInteger('id_dtransaction')->nullable();
-            $table->foreign('id_dtransaction')->references('id')->on('dtransactions')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('dtransaction_id')->nullable();
+            $table->foreign('dtransaction_id')->references('id')->on('dtransactions')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             
             $table->timestamps();
         });

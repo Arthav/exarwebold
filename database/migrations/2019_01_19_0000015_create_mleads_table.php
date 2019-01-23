@@ -21,8 +21,8 @@ class CreateMleadsTable extends Migration
             $table->string('tipe')->nullable();
             $table->Integer('delet')->nullable();
             $table->longText('deskripsi')->nullable();
-            $table->unsignedInteger('id_users')->nullable();
-            $table->foreign('id_users')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('user_id')->nullable();
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMpolicysTable extends Migration
+class CreateMpoliciesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMpolicysTable extends Migration
      */
     public function up()
     {
-        Schema::create('mpolicys', function (Blueprint $table) {
+        Schema::create('mpolicies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
             $table->Integer('commission_min')->nullable();
@@ -39,6 +39,6 @@ class CreateMpolicysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mpolicys');
+        Schema::dropIfExists('mpolicies');
     }
 }

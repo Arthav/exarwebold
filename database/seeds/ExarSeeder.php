@@ -11,7 +11,7 @@ class ExarSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('mpolicys')->insert([
+        DB::table('mpolicies')->insert([
 
             [
               'id' => '1',
@@ -38,7 +38,14 @@ class ExarSeeder extends Seeder
                 'nama' => 'Admin',
                 'level' => '1',
                 'delet' => '0',
-                'id_mpolicys' => '1',
+                'mpolicie_id' => '1',
+              ],
+              [
+                'id' => '2',
+                'nama' => 'Manager',
+                'level' => '1',
+                'delet' => '0',
+                'mpolicie_id' => '1',
               ]
             ]);
   
@@ -72,7 +79,7 @@ class ExarSeeder extends Seeder
                 'email' => 'christianbonafena7@gmail.com',
                 'alamat' => 'Sidoarjo',
                 'nik' => '13450230302040',
-                'id_mroles' => '1',
+                'mrole_id' => '1',
                 'password' => bcrypt('123123'),
               ]
             ]);
@@ -83,7 +90,7 @@ class ExarSeeder extends Seeder
                 'id' => '1',
                 'property_sold' => '1',
                 'delet' => '0',
-                'id_users' => '1',   
+                'user_id' => '1',   
               ]
             ]);
   
@@ -115,7 +122,7 @@ class ExarSeeder extends Seeder
                 'listrik' => '3300',
                 'delet' => '0',
                 'sold' => '0',
-                'id_users' => '1',
+                'user_id' => '1',
               ]
             ]);
   
@@ -125,8 +132,8 @@ class ExarSeeder extends Seeder
                 'id' => '1',
                 'close_price' => '1000000000',
                 'delet' => '0',
-                'id_mtransactions' => '1',
-                'id_mlistings' => '1',     
+                'mtransaction_id' => '1',
+                'mlisting_id' => '1',     
                 
               ]
             ]);
@@ -142,7 +149,7 @@ class ExarSeeder extends Seeder
                 'tipe' => '1',
                 'delet' => '0',
                 'deskripsi' => 'Calon buyer properti rumah wiyung, cari rumah 1 lantai',
-                'id_users' => '1',   
+                'user_id' => '1',   
               ]
             ]);
     }

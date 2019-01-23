@@ -50,6 +50,7 @@ INDEX
                 <th>Email agen</th>
                 <th>Alamat</th>
                 <th>NIK</th>
+                <th>ID Jabatan</th>
                 <th>Jabatan</th>
               </tr>
               @foreach($agens as $agen)
@@ -58,7 +59,9 @@ INDEX
               <td>{{$agen->email}}</td>
               <td>{{$agen->alamat}}</td>
               <td>{{$agen->nik}}</td>
-              {{-- <td>{{$agen->mrole->nama}}</td> --}}
+              <td>{{$agen->id_mroles}}</td>
+              <td>{{$agen->mroles->nama}}</td>
+             
               
               </tr>
               @endforeach
