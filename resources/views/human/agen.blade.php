@@ -1,5 +1,5 @@
 <!-- DONE -->
-<!-- Listing list-->
+<!-- Agen list-->
 @extends('layouts.master')
 
 @section('title')
@@ -18,13 +18,13 @@ INDEX
     <div class="w3-container w3-blue w3-padding-32">
       <div class="W3-container">
 
-        <h2>Daftar Listing</h2>
+        <h2>Daftar Agen</h2>
         <!--Awal Padding-->
 
 
             <!-- FILTER CARI NAMA-->
 
-            <form action="/karyawan" method="get">
+            <form action="{{ route('Human.Agen') }}" method="get">
               <p><h5>Cari</h5></p>
               <div class="w3-row-padding">
                 <div class="w3-half">
@@ -41,25 +41,24 @@ INDEX
         <!--Akhir Padding-->
         </div>
 
-        <!-- TABLE KARYAWAN -->
+        <!-- TABLE AGEN -->
         <p>
           <div class="w3-responsive" style=color:black>
             <table class="w3-table-all">
               <tr>
+                <th>Nama agen</th>
+                <th>Email agen</th>
+                <th>Alamat</th>
                 <th>NIK</th>
-                <th>Nama Karyawan</th>
-                <th>Departemen</th>
-                <th>Posisi</th>
-                <th>Jenis Kelamin</th>
-                <th>Sekantor</th>
-                <th>Tanggal Masuk</th>
-                <th>Masa Kerja</th>
+                <th>Jabatan</th>
               </tr>
-              @foreach($mlistings as $mlisting)
+              @foreach($agens as $agen)
               <tr>
-              <td>{{$mlisting->nama}}</td>
-              <td>{{$mlisting->jenis_list}}</td>
-              <td>{{$mlisting->price}}</td>
+              <td>{{$agen->name}}</td>
+              <td>{{$agen->email}}</td>
+              <td>{{$agen->alamat}}</td>
+              <td>{{$agen->nik}}</td>
+              {{-- <td>{{$agen->mrole->nama}}</td> --}}
               
               </tr>
               @endforeach
@@ -76,9 +75,9 @@ INDEX
 
 
 
-        <!--Tombol Tambah Karyawan-->
+        <!--Tombol Tambah AGEN-->
         <p>
-        <a class="w3-btn w3-black" href="/karyawan/create">Tambah Baru</a>
+        <a class="w3-btn w3-black" href="{{ route('Human.Agen.Tambah') }}">Tambah Baru</a>
         </p>
 
 

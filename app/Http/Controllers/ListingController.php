@@ -19,5 +19,14 @@ class ListingController extends Controller
         return view('listing.show');
     }
 
+    public function tambahlisting()
+    {
+        return view('listing.tambahlisting');
+    }
+
+    public function ubahlisting()
+    {
+        return view('listing.ubahlisting');
+    }
 
 }

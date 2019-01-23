@@ -36,7 +36,7 @@
       </a>
       <div id="Acc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="{{ route('Listing_Default') }}" class="w3-bar-item w3-button">Daftar Listing</a>
-        <a href="#" class="w3-bar-item w3-button">Tambah Listing</a>
+        <a href="{{ route('Listing.Tambah') }}" class="w3-bar-item w3-button">Tambah Listing</a>
         <a href="{{ route('Listing.Show') }}" class="w3-bar-item w3-button">Test show</a>
       </div>
 
@@ -45,9 +45,8 @@
         Recruitment <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        {{-- <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
-        <a href="{{ route('Human.Agen.Tambah') }}" class="w3-bar-item w3-button">Tambah Agen Baru</a>
-        <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
+        <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
+        {{-- <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
         <a href="{{ route('Human.Kebijakan') }}" class="w3-bar-item w3-button">Kebijakan</a> --}}
       </div>
 
