@@ -33,7 +33,7 @@ Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 //Human Resource Management
 //agen
 Route::get('/agen/index', 'HumanController@index')->name('Human.Agen');
-Route::get('/agen/show', 'HumanController@showagen')->name('Human.Agen.Show');
+Route::get('/agen/show/{id}', 'HumanController@showagen')->name('Human.Agen.Show');
 Route::get('/agen/ubah', 'HumanController@ubahagen')->name('Human.Agen.Ubah');
 Route::get('/agen/tambah', 'HumanController@tambahagen')->name('Human.Agen.Tambah');
 Route::get('/agen/hapus', 'HumanController@hapusagen')->name('Human.Agen.Hapus');

@@ -15,9 +15,9 @@ class HumanController extends Controller
         return view('human.agen.index',compact('agens'));
     }
 
-    Public function showagen()
+    Public function showagen($id)
     {
-        $agen=user::all();
+        $agen=user::find($id);
         return view('human.agen.show',compact('agen'));
     }
 
@@ -50,7 +50,7 @@ class HumanController extends Controller
       $no_kk_lama = $user->no_kk;
       $no_kk_baru = $request->no_kk;
 
-      
+
       return redirect()->route('human.agen.show', ['id_karyawan' => $id]);
     }
 
@@ -85,7 +85,7 @@ class HumanController extends Controller
     {
         $bijaks=mpolicy::all();
         return view('human.policy.index',compact('bijaks'));
-    }   
+    }
 
     Public function tambahpolicy()
     {
@@ -98,4 +98,3 @@ class HumanController extends Controller
     }
 
 }
-
