@@ -30,15 +30,15 @@ Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
 
 //Human Resource Management
-Route::get('/agen', 'HumanController@index')->name('Human.Agen');
-Route::get('/agen/ubah', 'HumanController@show')->name('Human.Agen.Ubah');
-Route::get('/agen/tambah', 'HumanController@index')->name('Human.Agen.Tambah');
-Route::get('/jabatan', 'HumanController@show')->name('Human.Jabatan');
-Route::get('/jabatan/ubah', 'HumanController@index')->name('Human.Jabatan.Ubah');
-Route::get('/jabatan/tambah', 'HumanController@show')->name('Human.Jabatan.Uambah');
-Route::get('/policy', 'HumanController@show')->name('Human.Policy');
-Route::get('/policy/ubah', 'HumanController@index')->name('Human.Policy.Ubah');
-Route::get('/policy/tambah', 'HumanController@show')->name('Human.Policy.Tambah');
+Route::get('/agen/index', 'HumanController@index')->name('Human.Agen');
+Route::get('/agen/ubah', 'HumanController@ubahagen')->name('Human.Agen.Ubah');
+Route::get('/agen/tambah', 'HumanController@tambahagen')->name('Human.Agen.Tambah');
+Route::get('/jabatan', 'HumanController@jabatan')->name('Human.Jabatan');
+Route::get('/jabatan/ubah', 'HumanController@ubahjabatan')->name('Human.Jabatan.Ubah');
+Route::get('/jabatan/tambah', 'HumanController@tambahjabatan')->name('Human.Jabatan.Tambah');
+Route::get('/policy', 'HumanController@policy')->name('Human.Policy');
+Route::get('/policy/ubah', 'HumanController@ubahpolicy')->name('Human.Policy.Ubah');
+Route::get('/policy/tambah', 'HumanController@tambahpolicy')->name('Human.Policy.Tambah');
 
 
 //Report

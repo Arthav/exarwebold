@@ -18,7 +18,7 @@ INDEX
     <div class="w3-container w3-blue w3-padding-32">
       <div class="W3-container">
 
-        <h2>Daftar Agen</h2>
+        <h2>Jabatan</h2>
         <!--Awal Padding-->
 
 
@@ -46,21 +46,15 @@ INDEX
           <div class="w3-responsive" style=color:black>
             <table class="w3-table-all">
               <tr>
-                <th>Nama agen</th>
-                <th>Email agen</th>
-                <th>Alamat</th>
-                <th>NIK</th>
-                <th>ID Jabatan</th>
                 <th>Jabatan</th>
+                <th>Level otoritas</th>
+               
               </tr>
-              @foreach($agens as $agen)
+              @foreach($jabats as $jabat)
               <tr>
-              <td>{{$agen->name}}</td>
-              <td>{{$agen->email}}</td>
-              <td>{{$agen->alamat}}</td>
-              <td>{{$agen->nik}}</td>
-              <td>{{$agen->id_mroles}}</td>
-              <td>{{$agen->mroles->nama}}</td>
+              <td>{{$jabat->nama}}</td>
+              <td>{{$jabat->level}}</td>
+              
              
               
               </tr>
@@ -80,7 +74,7 @@ INDEX
 
         <!--Tombol Tambah AGEN-->
         <p>
-        <a class="w3-btn w3-black" href="{{ route('Human.Agen.Tambah') }}">Tambah Baru</a>
+        <a class="w3-btn w3-black" href="{{ route('Human.Jabatan.Tambah') }}">Tambah Baru</a>
         </p>
 
 

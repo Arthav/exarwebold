@@ -11,6 +11,6 @@ Tambah Listing
 
 @section('content2')
 
-xxx
+Form
 
 @endsection

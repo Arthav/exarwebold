@@ -42,12 +42,12 @@
 
     <!--MENU HUMAN RESOURCE-->
       <a onclick="myAccFunc2()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn2">
-        Recruitment <i class="fa fa-caret-down"></i>
+        Human Resource <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc2" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
-        {{-- <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
-        <a href="{{ route('Human.Kebijakan') }}" class="w3-bar-item w3-button">Kebijakan</a> --}}
+        <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Agen</a>
+        <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
+        <a href="{{ route('Human.Policy') }}" class="w3-bar-item w3-button">Kebijakan</a>
       </div>
 
   <!--MENU KOMISI-->
