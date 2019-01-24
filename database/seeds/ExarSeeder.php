@@ -79,8 +79,13 @@ class ExarSeeder extends Seeder
                 'email' => 'christianbonafena7@gmail.com',
                 'alamat' => 'Sidoarjo',
                 'nik' => '13450230302040',
+                'npwp' => '1230120490324',
+                'telp1' => '082212312312',
+                'telp2' => '082212342323',
+                'jeniskelamin' => 'Pria',
                 'mrole_id' => '1',
                 'password' => bcrypt('123123'),
+                'agama' => 'Kristen'
               ]
             ]);
   

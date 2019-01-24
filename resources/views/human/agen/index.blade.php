@@ -55,7 +55,7 @@ INDEX
               </tr>
               @foreach($agens as $agen)
               <tr>
-              <td>{{$agen->name}}</td>
+              <td><a href="{{ route('Human.Agen.Show', ['id' => $agen->id]) }}">{{$agen->name}}</td>
               <td>{{$agen->email}}</td>
               <td>{{$agen->alamat}}</td>
               <td>{{$agen->nik}}</td>

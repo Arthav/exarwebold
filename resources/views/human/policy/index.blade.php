@@ -56,9 +56,9 @@ INDEX
               </tr>
               @foreach($bijaks as $bijak)
               <tr>
-              <td>{{$bijak->name}}</td>
-              <td>{{$bijak->commission_min}}</td>
-              <td>{{$bijak->commission_max}}</td>
+              <td>{{$bijak->nama}}</td>
+              <td>{{$bijak->commission_min}}%</td>
+              <td>{{$bijak->commission_max}}%</td>
               <td>{{$bijak->co_buy}}</td>
               <td>{{$bijak->co_sell}}</td>
               <td>{{$bijak->out_broke}}</td>
