@@ -18,7 +18,7 @@
 
 <!-- <link rel="stylesheet" href="{{URL::asset('css/font-awesome.min.css')}}" rel="{{URL::asset('stylesheet')}}" integrity="{{URL::asset('sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN')}}" crossorigin="{{URL::asset('anonymous')}}"> -->
 
-<body onload="myAccFunc2()" class="w3-content" style="max-width:1200px">
+<body class="w3-content" style="max-width:1200px">
 
 
   <!-- Sidebar/menu -->
