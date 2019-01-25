@@ -15,7 +15,8 @@ class HumanController extends Controller
     Public function index(Request $request)
     {
         $s = $request->input('s');
-        $agens=user::orderBy('id')->search($s);
+        // dd($s);
+        $agens=user::orderBy('id')->search($s)->get();
         // ->paginate(10);
         // dd($agens->->toarray());
         // dd($s)->toarray();
