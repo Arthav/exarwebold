@@ -8,11 +8,15 @@ use App\Mrole;
 Use App\User;
 class HumanController extends Controller
 {
-    Public function index()
+    Public function index(Request $request)
     {
-        $agens=user::all();
+        $s = $request->input('s');
+        $agens=user::all()
+        ->search($s);
+        // ->paginate(10);
         // dd($agens->->toarray());
-        return view('human.agen.index',compact('agens'));
+        dd($s);
+        return view('human.agen.index',['agens'=>$agens]);
     }
 
     Public function showagen($id)

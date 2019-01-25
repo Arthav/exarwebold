@@ -28,7 +28,7 @@ INDEX
               <p><h5>Cari</h5></p>
               <div class="w3-row-padding">
                 <div class="w3-half">
-                  <!-- <input class="w3-input" type="text" name="s" placeholder="cari berdasarkan nama"> -->
+                  <input class="w3-input" type="text" name="s" placeholder="cari berdasarkan nama">
                 </div>
                 <div class="w3-half">
                   <button type="submit" class="w3-btn w3-black">Cari</button>

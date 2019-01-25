@@ -67,7 +67,7 @@ Data Agen
                 <p><b>Jenis Kelamin</b></p>
                 
                 <div style="color:#0099ff">
-                  <p><b>abc</b></p>
+          
                 </div>
                 <p><b>Agama</b></p>
                 

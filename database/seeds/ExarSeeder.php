@@ -75,9 +75,9 @@ class ExarSeeder extends Seeder
   
               [
                 'id' => '1',
-                'name' => 'cb',
+                'name' => 'Christian',
                 'email' => 'christianbonafena7@gmail.com',
-                'alamat' => 'Sidoarjo',
+                'alamat' => 'surabaya',
                 'nik' => '13450230302040',
                 'npwp' => '1230120490324',
                 'telp1' => '082212312312',
@@ -86,6 +86,20 @@ class ExarSeeder extends Seeder
                 'mrole_id' => '1',
                 'password' => bcrypt('123123'),
                 'agama' => 'Kristen'
+              ],
+              [
+                'id' => '2',
+                'name' => 'Arzen',
+                'email' => 'arzen@gmail.com',
+                'alamat' => 'Sidoarjo',
+                'nik' => '4124123123',
+                'npwp' => '2312312343435',
+                'telp1' => '034929304990',
+                'telp2' => '093059238400',
+                'jeniskelamin' => 'Pria',
+                'mrole_id' => '2',
+                'password' => bcrypt('123123'),
+                'agama' => 'Islam'
               ]
             ]);
   
