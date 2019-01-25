@@ -34,7 +34,7 @@ class HumanController extends Controller
     Public function tambah_agen(Request $request)
     {
         //Data user
-        // $user = new user;
+        $user = new user;
         $user->name = $request->nama;
         $user->email = $request->email;
         $user->alamat = $request->alamat;
