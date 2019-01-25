@@ -33,4 +33,11 @@ public function Mrole()
     return $this->belongsTo('App\Mrole');
 }
 
+public function scopeSearch($query, $s)
+{
+    return $query->where('name', 'like', '%' .$s.'%')
+  ->orWhere('id', 'like', '%' . $s . '%')
+  ->orWhere('email', 'like', '%' . $s . '%');
+}
+
 }

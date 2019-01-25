@@ -3,20 +3,23 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+//Table
 use App\Mpolicy;
 use App\Mrole;
 Use App\User;
+
+
 class HumanController extends Controller
 {
     Public function index(Request $request)
     {
         $s = $request->input('s');
-        $agens=user::all()
-        ->search($s);
+        $agens=user::orderBy('id')->search($s);
         // ->paginate(10);
         // dd($agens->->toarray());
-        dd($s);
-        return view('human.agen.index',['agens'=>$agens]);
+        // dd($s)->toarray();
+        return view('human.agen.index',compact('agens'));
     }
 
     Public function showagen($id)
@@ -33,7 +36,6 @@ class HumanController extends Controller
     Public function ubahagen(Request $request, $id)
     {
       // $karyawan->nama_kolom = isi tabel;
-      $id = $id;
       $user = user::find($id);
 
       //Data Pribadi
