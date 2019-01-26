@@ -58,7 +58,7 @@ INDEX
               <td>{{$agen->email}}</td>
               <td>{{$agen->alamat}}</td>
               <td>{{$agen->nik}}</td>
-              <td>{{$agen->mrole->nama}}</td>
+              <td>{{$agen->mrole['nama']}}</td>
              
               
               </tr>

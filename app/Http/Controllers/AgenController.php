@@ -15,14 +15,17 @@ class AgenController extends Controller
     {
         $s = $request->input('s');
         $agens=user::orderBy('id')->search($s)->paginate(10);
+        $mroles=mrole::all();
         // dd($s)->toarray();
-        return view('human.agen.index',compact('agens'));
+        return view('human.agen.index',compact('agens','mroles'));
     }
 
     Public function show_agen($id)
     {
+        
         $agen=user::find($id);
         $mroles=mrole::all();
+        // dd($agen);
         return view('human.agen.show',compact('agen','mroles'));
     }
 
@@ -57,6 +60,7 @@ class AgenController extends Controller
     {
       // $karyawan->nama_kolom = isi tabel;
       $user = user::find($id);
+      $mroles=mrole::all();
 
       //Data Pribadi = 10
       $user->name = $request->nama ;
@@ -72,7 +76,7 @@ class AgenController extends Controller
       $user->save();
 
 
-      return redirect()->route('human.agen.show', ['id' => $id]);
+      return redirect()->route('Human.Agen.Show', ['id' => $id],compact('user','mroles'));
     }
 
     Public function hapus_agen()

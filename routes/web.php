@@ -37,13 +37,13 @@ Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 //agen
 Route::get('/agen', 'AgenController@index')->name('Human.Agen');
 Route::get('/agen/{id}', 'AgenController@show_agen')->name('Human.Agen.Show');
-Route::get('/agen/{id}/ubah', 'AgenController@ubah_agen')->name('Human.Agen.Ubah');
+Route::put('/agen/{id}/ubah', 'AgenController@ubah_agen')->name('Human.Agen.Ubah');
 Route::get('/agen/tambah', 'AgenController@tambah_agen')->name('Human.Agen.Tambah');
-Route::get('/agen', 'AgenController@simpan_agen')->name('Human.Agen.Simpan');
-Route::get('/agen/{id}', 'AgenController@hapus_agen')->name('Human.Agen.Hapus');
+Route::post('/agen/simpan', 'AgenController@simpan_agen')->name('Human.Agen.Simpan');
+Route::get('/agen/{id}/hapus', 'AgenController@hapus_agen')->name('Human.Agen.Hapus');
 
 //jabatan
-Route::get('/jabatan', 'HumanController@jabatan')->name('Human.Jabatan');
+Route::get('/jabatan', 'RoleController@jabatan')->name('Human.Jabatan');
 Route::get('/jabatan/ubah', 'HumanController@ubah_jabatan')->name('Human.Jabatan.Ubah');
 Route::get('/jabatan/tambah', 'HumanController@tambah_jabatan')->name('Human.Jabatan.Tambah');
 

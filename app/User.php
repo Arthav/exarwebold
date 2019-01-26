@@ -30,7 +30,7 @@ class User extends Authenticatable
 
 public function Mrole()
 {
-    return $this->belongsTo('App\Mrole');
+    return $this->belongsTo('App\Mrole','mrole_id');
 }
 
 public function scopeSearch($query, $s)
