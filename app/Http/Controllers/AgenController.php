@@ -9,13 +9,8 @@ use App\Mpolicy;
 use App\Mrole;
 Use App\User;
 
-
-class HumanController extends Controller
+class AgenController extends Controller
 {
-
-    //----------------------------------------------------------------------------------------------
-    //Agen
-    //----------------------------------------------------------------------------------------------
     Public function index(Request $request)
     {
         $s = $request->input('s');
@@ -86,43 +81,4 @@ class HumanController extends Controller
         $user->save();
         return redirect()->route('human.agen.show');
     }
-   
-
-    //----------------------------------------------------------------------------------------------
-    //Jabatan
-    //----------------------------------------------------------------------------------------------
-
-    Public function jabatan()
-    {
-        $jabats=mrole::all();
-        // dd($jabats->toarray());
-        return view('human.jabatan.index',compact('jabats'));
-    }
-
-    Public function tambah_jabatan()
-    {
-        return view('human.jabatan.tambah');
-    }
-
-    Public function ubah_jabatan()
-    {
-        return view('human.jabatan.ubah');
-    }
-
-    Public function policy()
-    {
-        $bijaks=mpolicy::all();
-        return view('human.policy.index',compact('bijaks'));
-    }
-
-    Public function tambah_policy()
-    {
-        return view('human.policy.tambah');
-    }
-
-    Public function ubah_policy()
-    {
-        return view('human.policy.ubah');
-    }
-
 }

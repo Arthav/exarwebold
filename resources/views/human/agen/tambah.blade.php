@@ -21,7 +21,7 @@ Daftar User Baru
     <div class="W3-container">
       <h3>Data Pribadi</h3>
 
-<form class="w3-container" action="{{ route('Human.Agen.Tambah') }}" method="post">
+<form class="w3-container" action="{{ route('Human.Agen.Simpan') }}" method="post">
   <p>
   <label>Nama</label>
   <input class="w3-input" name="nama" type="text"></p>
@@ -84,7 +84,7 @@ Daftar User Baru
   <label>Jabatan</label>
   <select class="w3-select w3-border" name="nama_jabatan">
     <option value="" disabled selected>Jabatan</option>
-    @foreach ($mjabatans as $mrole)
+    @foreach ($mroles as $mrole)
       <option value="{{ $mrole->id }}">{{ $mrole->nama}}</option>
     @endforeach
   </select>
@@ -92,7 +92,7 @@ Daftar User Baru
 
     <p>
     <label>Password</label>
-    <input class="w3-input" name="password" type="text"></p>
+    <input class="w3-input" name="password" type="password"></p>
 
 
 

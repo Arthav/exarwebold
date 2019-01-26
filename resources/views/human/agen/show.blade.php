@@ -44,7 +44,14 @@ Data Agen
             <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
               <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Data Agen</div>
             </a>
+             <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Statistik</div>
+            </a>
+            <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Komisi</div>
+            </a>
           </div>
+          
           <!-- Akhir tabulasi -->
           
           <!-- isi tabs data agen -->
@@ -126,9 +133,9 @@ Data Agen
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="DELETE">
                   </form>
-                  <!--akhir form HAPUS karyawan-->
+                  <!--akhir form HAPUS agen-->
                   
-                  <!--tombol cancel HAPUS karyawan-->
+                  <!--tombol cancel HAPUS agen-->
                   <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
                     <button onclick="document.getElementById('hapus01').style.display='none'" type="button" class="w3-button w3-black">Cancel</button>
                   </div>
@@ -136,7 +143,7 @@ Data Agen
                 </div>
               </div>
             </div>
-            <!--akhir POP UP HAPUS karyawan-->
+            <!--akhir POP UP HAPUS agen-->
 
 
             <!-- pop up Edit Data agen-->
@@ -149,7 +156,7 @@ Data Agen
                 </div>
 
                 <!-- POP UP -->
-                <!--Awal Form Edit Data Pribadi Karyawwan-->
+                <!--Awal Form Edit Data Pribadi agen-->
                 <form class="w3-container" action="{{ route('Human.Agen.Ubah', ['id' => $agen->id]) }}" method="post">
                   <div class="w3-section">
 
@@ -157,25 +164,32 @@ Data Agen
                     <div style="color:black">
                       <label><b>Nama</b></label>
                     </div>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" value="{{ $agen->nama}}" name="nama" >
-
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" value="{{ $agen->name }}" name="nama" >
+                
                      <!-- Jabatan -->
-                     <div style="color:black">
-                        <label><b>Jabatan</b></label>
-                     </div>
-                     <input class="w3-input w3-border" type="text" value="{{ $agen->email }}" name="email" >
-
+                    <p>
+                    <label style="color:black"><b>Jabatan</b></label>
+                    <select class="w3-select w3-border" name="nama_jabatan">
+                      <option value="{{ $agen->mrole->nama }}"disable selected>Jabatan</option>
+                      @foreach ($mroles as $mrole)
+                        <option value="{{ $mrole->id }}">{{ $mrole->nama}}</option>
+                      @endforeach
+                    </select>
+                    </p><br>
+                     
                     <!-- Email -->
                     <div style="color:black">
                       <label><b>Tanggal Lahir</b></label>
                     </div>
                     <input class="w3-input w3-border" type="text" value="{{ $agen->email }}" name="email" >
+                    <br>
 
                      <!-- Alamat -->
                      <div style="color:black">
                         <label><b>Alamat</b></label>
                      </div>
                      <input class="w3-input w3-border" type="text" value="{{ $agen->alamat }}" name="alamat" >
+                     <br>
 
                      <!-- NO TELEPON -->
                     <div style="color:black">
@@ -187,6 +201,7 @@ Data Agen
                       <label><b>No. Telepon 2</b></label>
                     </div>
                     <input class="w3-input w3-border" type="text"  name="telp2" value="{{$agen->telp2}}">
+                    <br>
 
                     <!-- NIK -->
                     <div style="color:black">
@@ -246,7 +261,7 @@ Data Agen
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                   </form>
-                  <!--Akhir Form Edit Data Pribadi Karyawwan-->
+                  <!--Akhir Form Edit Data Pribadi agen-->
 
 
 
