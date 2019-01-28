@@ -26,4 +26,10 @@ class RoleController extends Controller
     {
         return view('human.jabatan.ubah');
     }
+
+    Public function hapus_jabatan()
+    {
+        return view('human.jabatan.ubah');
+    }
+
 }

@@ -64,12 +64,12 @@ Daftar User Baru
     <label>Jenis kelamin</label>
     <div class="w3-row-padding">
     <div class="w3-half">
-      <input class="w3-radio" type="radio" name="jenis_kelamin" value="Pria">
+      <input class="w3-radio" type="radio" name="jeniskelamin" value="Pria">
       <label>Pria</label>
     </div>
 
     <div class="w3-half">
-      <input class="w3-radio" type="radio" name="jenis_kelamin" value="Wanita">
+      <input class="w3-radio" type="radio" name="jeniskelamin" value="Wanita">
       <label>Wanita</label>
     </div>
     </div>

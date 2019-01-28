@@ -56,7 +56,7 @@ Data Agen
           
           <!-- isi tabs data agen -->
           <div id="Data_pribadi" class="w3-container tabsdkaryawan" style="display:none">
-          <h2>Data agen: {{$agen['name']}}</h2>
+          <h2>Data agen: {{$agen->name}}</h2>
 
             <!-- Awal padding -->
             <div class="w3-row-padding">
@@ -84,17 +84,17 @@ Data Agen
               <!-- LABEL DATA PRIBADI-->
               <div class="w3-twothird">
 
-                <p><label><label style="color:#0099ff">'</label>{{$agen['id']}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['name']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['mrole']['nama']}} </label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['email']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['alamat']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['telp1']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['telp2']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['nik']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['npwp']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['jeniskelamin']}}</label></p>
-                <p><label><label style="color:#0099ff">'</label>{{$agen['agama']}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->id}} </label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->name}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->mrole['nama']}} </label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->email}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->alamat}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->telp1}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->telp2}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->nik}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->npwp}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->jeniskelamin}}</label></p>
+                <p><label><label style="color:#0099ff">'</label>{{$agen->agama}}</label></p>
 
               </div>
             </div>
@@ -122,16 +122,16 @@ Data Agen
                 </div>
 
                 <!--awal form HAPUS agen-->
-                <form class="w3-container" action="{{ route('Human.Agen.Hapus',['id' => $agen['id']]) }}" method="post">
+                <form class="w3-container" action="{{ route('Human.Agen.Hapus',['id' => $agen->id]) }}" method="post">
                   <div class="w3-section">
                     
                     <!-- POP UP DELETE -->
                     <div style="color:black">
-                      <h3>Apakah anda yakin untuk menghapus data agen {{ $agen['nama'] }}?</h3>
+                      <h3>Apakah anda yakin untuk menghapus data agen {{ $agen->nama }}?</h3>
                     </div>
                     <input class="w3-button w3-block w3-red w3-section w3-padding" type="submit" value="Delete"></input>
                     {{ csrf_field() }}
-                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_method" value="PUT">
                   </form>
                   <!--akhir form HAPUS agen-->
                   
@@ -157,64 +157,64 @@ Data Agen
 
                 <!-- POP UP -->
                 <!--Awal Form Edit Data Pribadi agen-->
-                <form class="w3-container" action="{{ route('Human.Agen.Ubah', ['id' => $agen['id']]) }}" method="post">
+                <form class="w3-container" action="{{ route('Human.Agen.Ubah', ['id' => $agen->id]) }}" method="post">
                   <div class="w3-section">
 
                     <!-- NAMA -->
                     <div style="color:black">
                       <label><b>Nama</b></label>
                     </div>
-                    <input class="w3-input w3-border w3-margin-bottom" type="text" value="{{ $agen['name'] }}" name="nama" >
+                    <input class="w3-input w3-border w3-margin-bottom" type="text" value="{{ $agen->name }}" name="nama" >
                 
                      <!-- Jabatan -->
                     <p>
                     <label style="color:black"><b>Jabatan</b></label>
-                    <select class="w3-select w3-border" name="nama_jabatan">
-                      <option value="{{ $agen['mrole']['nama'] }}"disable selected>Jabatan</option>
+                    <select class="w3-select w3-border" name="id_jabatan">
+                      <option value="{{ $agen->mrole['id'] }}" >{{$agen->mrole['nama']}}</option>
                       @foreach ($mroles as $mrole)
-                        <option value="{{ $mrole['id'] }}">{{ $mrole['nama']}}</option>
+                        <option value="{{ $mrole->id }}">{{ $mrole->nama}}</option>
                       @endforeach
                     </select>
                     </p><br>
                      
                     <!-- Email -->
                     <div style="color:black">
-                      <label><b>Tanggal Lahir</b></label>
+                      <label><b>Email</b></label>
                     </div>
-                    <input class="w3-input w3-border" type="text" value="{{ $agen['email'] }}" name="email" >
+                    <input class="w3-input w3-border" type="text" value="{{ $agen->email }}" name="email" >
                     <br>
 
                      <!-- Alamat -->
                      <div style="color:black">
                         <label><b>Alamat</b></label>
                      </div>
-                     <input class="w3-input w3-border" type="text" value="{{ $agen['alamat'] }}" name="alamat" >
+                     <input class="w3-input w3-border" type="text" value="{{ $agen->alamat }}" name="alamat" >
                      <br>
 
                      <!-- NO TELEPON -->
                     <div style="color:black">
                       <label><b>No. Telepon 1</b></label>
                     </div>
-                    <input class="w3-input w3-border" type="text" name="telp1" value="{{$agen['telp1']}}">
+                    <input class="w3-input w3-border" type="text" name="telp1" value="{{$agen->telp1}}">
                     <br>
                     <div style="color:black">
                       <label><b>No. Telepon 2</b></label>
                     </div>
-                    <input class="w3-input w3-border" type="text"  name="telp2" value="{{$agen['telp2']}}">
+                    <input class="w3-input w3-border" type="text"  name="telp2" value="{{$agen->telp2}}">
                     <br>
 
                     <!-- NIK -->
                     <div style="color:black">
                       <label><b>NIK</b></label>
                     </div>
-                    <input class="w3-input w3-border" type="text" name="nik" value="{{ $agen['nik'] }}">
+                    <input class="w3-input w3-border" type="text" name="nik" value="{{ $agen->nik }}">
                     <br>
 
                     <!-- NPWP -->
                     <div style="color:black">
                       <label><b>NPWP</b></label>
                     </div>
-                    <input class="w3-input w3-border" type="text" name="npwp" value="{{ $agen['npwp'] }}">
+                    <input class="w3-input w3-border" type="text" name="npwp" value="{{ $agen->npwp }}">
                     <br>
 
 
@@ -224,11 +224,11 @@ Data Agen
                       <label><b>Jenis Kelamin</b></label>
                     </div>
                     <select class="w3-select w3-border" name="jeniskelamin">
-                      @if (empty($agen['jeniskelamin']))
+                      @if (empty($agen->jeniskelamin))
                         <option value="" disabled selected>Jenis Kelamin</option>
                       @endif
-                      <option @if ($agen['jenis_kelamin'] == 'Wanita') selected @endif value="Perempuan">Wanita</option>
-                      <option @if ($agen['jenis_kelamin'] == 'Pria') selected @endif value="Laki-laki">Pria</option>
+                      <option @if ($agen->jenis_kelamin == 'Wanita') selected @endif value="Wanita">Wanita</option>
+                      <option @if ($agen->jenis_kelamin == 'Pria') selected @endif value="Pria">Pria</option>
                     </select>
                     </p>
 
@@ -242,22 +242,17 @@ Data Agen
                       @if (empty($agen->agama))
                         <option value="" disabled selected>Agama</option>
                       @endif
-                      <option @if ($agen['agama'] == 'Islam') selected @endif value="Islam">Islam</option>
-                      <option @if ($agen['agama'] == 'Kristen') selected @endif value="Kristen">Kristen</option>
-                      <option @if ($agen['agama'] == 'Katholik') selected @endif value="Katholik">Katholik</option>
-                      <option @if ($agen['agama'] == 'Hindu') selected @endif value="Hindu">Hindu</option>
-                      <option @if ($agen['agama'] == 'Buddha') selected @endif value="Buddha">Budha</option>
-                      <option @if ($agen['agama'] == 'Lainnya') selected @endif value="Lainnya">Lainnya</option>
+                      <option @if ($agen->agama == 'Islam') selected @endif value="Islam">Islam</option>
+                      <option @if ($agen->agama == 'Kristen') selected @endif value="Kristen">Kristen</option>
+                      <option @if ($agen->agama == 'Katholik') selected @endif value="Katholik">Katholik</option>
+                      <option @if ($agen->agama == 'Hindu') selected @endif value="Hindu">Hindu</option>
+                      <option @if ($agen->agama == 'Buddha') selected @endif value="Buddha">Budha</option>
+                      <option @if ($agen->agama == 'Lainnya') selected @endif value="Lainnya">Lainnya</option>
                     </select>
                     </p>
 
-
-
-                  
-
-                    <!-- BUTTON EDIT HK -->
-                    <!--Tombol Simpan Edit Data Pribadi-->
-                    <input class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" value="edit">
+                    <!--Tombol Simpan Edit Data Pribadi agen-->
+                    <input class="w3-button w3-block w3-blue w3-section w3-padding" type="submit" value="Save">
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="PUT">
                   </form>

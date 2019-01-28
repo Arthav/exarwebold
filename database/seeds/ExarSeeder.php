@@ -27,7 +27,23 @@ class ExarSeeder extends Seeder
               'co_fee' => '50',
               'reference_fee' => '20',
               'delete' => '0',
+            ],
+            [
+              'id' => '2',
+              'nama' => 'Default Agen Policy',
+              'commission_min' => '2',
+              'commission_max' => '3',
+              'co_buy' => 'Yes',
+              'co_sell' => 'Yes',
+              'out_broke' => 'Yes',
+              'reference' => 'Yes',
+              'min_sell' => '1',
+              'split_fee' => '50',
+              'co_fee' => '50',
+              'reference_fee' => '20',
+              'delete' => '0',
             ]
+            
           ]);
   
   
@@ -46,6 +62,13 @@ class ExarSeeder extends Seeder
                 'level' => '1',
                 'delet' => '0',
                 'mpolicie_id' => '1',
+              ],
+              [
+                'id' => '3',
+                'nama' => 'Default Agen',
+                'level' => '2',
+                'delet' => '0',
+                'mpolicie_id' => '2',
               ]
             ]);
   
@@ -100,6 +123,20 @@ class ExarSeeder extends Seeder
                 'mrole_id' => '2',
                 'password' => bcrypt('123123'),
                 'agama' => 'Islam'
+              ],
+              [
+                'id' => '3',
+                'name' => 'Sarumin',
+                'email' => 'Sarumin@gmail.com',
+                'alamat' => 'Sidoarjo',
+                'nik' => '1024091242039',
+                'npwp' => '04923049030',
+                'telp1' => '49405340034',
+                'telp2' => '49203404040',
+                'jeniskelamin' => 'Wanita',
+                'mrole_id' => '2',
+                'password' => bcrypt('123123'),
+                'agama' => 'Buddha'
               ]
             ]);
   
