@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('agama')->nullable();
             $table->string('jeniskelamin')->nullable();
             $table->string('npwp')->nullable();
-            $table->unsignedInteger('mrole_id')->nullable();
+            $table->unsignedInteger('mrole_id')->default('3');
             $table->foreign('mrole_id')->references('id')->on('mroles')->onUpdate('cascade')->onDelete('cascade');
            
             $table->timestamp('email_verified_at')->nullable();

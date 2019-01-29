@@ -8,7 +8,7 @@
 @extends('layouts.master')
 
 @section('title')
-DETAIL Agen
+Detail Agen
 @endsection
 
 @section('content')
@@ -284,9 +284,6 @@ Data Agen
 
     </div>
     <!-- !AKHIR PAGE CONTENT! -->
-
-    <!-- Footer Copyright -->
-    <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Exari</a> 2018</a></div>
 
 
 

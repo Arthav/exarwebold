@@ -16,12 +16,8 @@ class ExarSeeder extends Seeder
             [
               'id' => '1',
               'nama' => 'Admin Policy',
-              'commission_min' => '2',
-              'commission_max' => '3',
-              'co_buy' => 'Yes',
-              'co_sell' => 'Yes',
-              'out_broke' => 'Yes',
-              'reference' => 'Yes',
+              'co_broke' => 'yes',
+              'reference' => 'yes',
               'min_sell' => '0',
               'split_fee' => '0',
               'co_fee' => '50',
@@ -31,12 +27,8 @@ class ExarSeeder extends Seeder
             [
               'id' => '2',
               'nama' => 'Default Agen Policy',
-              'commission_min' => '2',
-              'commission_max' => '3',
-              'co_buy' => 'Yes',
-              'co_sell' => 'Yes',
-              'out_broke' => 'Yes',
-              'reference' => 'Yes',
+              'co_broke' => 'yes',
+              'reference' => 'yes',
               'min_sell' => '1',
               'split_fee' => '50',
               'co_fee' => '50',
@@ -54,21 +46,21 @@ class ExarSeeder extends Seeder
                 'nama' => 'Admin',
                 'level' => '1',
                 'delet' => '0',
-                'mpolicie_id' => '1',
+                'mpolicy_id' => '1',
               ],
               [
                 'id' => '2',
                 'nama' => 'Manager',
                 'level' => '1',
                 'delet' => '0',
-                'mpolicie_id' => '1',
+                'mpolicy_id' => '1',
               ],
               [
                 'id' => '3',
                 'nama' => 'Default Agen',
                 'level' => '2',
                 'delet' => '0',
-                'mpolicie_id' => '2',
+                'mpolicy_id' => '2',
               ]
             ]);
   
@@ -147,6 +139,8 @@ class ExarSeeder extends Seeder
                 'property_sold' => '1',
                 'delet' => '0',
                 'user_id' => '1',   
+                'close_price' => '1000000000',
+                'mlisting_id' => '1',
               ]
             ]);
   
@@ -182,17 +176,7 @@ class ExarSeeder extends Seeder
               ]
             ]);
   
-            DB::table('dtransactions')->insert([
-  
-              [
-                'id' => '1',
-                'close_price' => '1000000000',
-                'delet' => '0',
-                'mtransaction_id' => '1',
-                'mlisting_id' => '1',     
-                
-              ]
-            ]);
+            
   
   
             DB::table('mleads')->insert([

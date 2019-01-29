@@ -16,10 +16,17 @@ class CreateMtransactionsTable extends Migration
         Schema::create('mtransactions', function (Blueprint $table) {
             $table->increments('id');
             $table->Integer('property_sold')->nullable();
-            $table->Integer('delet')->nullable();
-            $table->unsignedInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            
+            $table->String('co_broke')->nullable();
+            $table->String('reference')->nullable();
+            $table->bigInteger('close_price')->nullable();
+            $table->Integer('final_commission')->nullable();
+            $table->Integer('split_fee')->nullable();
+            $table->Integer('co_fee')->nullable();
+            $table->Integer('reference_fee')->nullable();
+            $table->Integer('delet')->default('0');
+            $table->unsignedInteger('mlisting_id')->nullable();
+            $table->foreign('mlisting_id')->references('id')->on('mlistings')->onUpdate('cascade')->onDelete('cascade');
+            $table->Integer('co_broke_id')->nullable();
             $table->timestamps();
         });
     }

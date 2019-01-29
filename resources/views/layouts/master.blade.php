@@ -37,7 +37,7 @@
       <div id="Acc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="{{ route('Listing_Default') }}" class="w3-bar-item w3-button">Daftar Listing</a>
         <a href="{{ route('Listing.Tambah') }}" class="w3-bar-item w3-button">Tambah Listing</a>
-        <a href="{{ route('Listing.Show') }}" class="w3-bar-item w3-button">Test show</a>
+        <a href="{{ route('Listing.Show') }}" class="w3-bar-item w3-button">Sold Listing</a>
       </div>
 
     <!--MENU HUMAN RESOURCE-->
@@ -50,9 +50,9 @@
         <a href="{{ route('Human.Policy') }}" class="w3-bar-item w3-button">Kebijakan</a>
       </div>
 
-  <!--MENU KOMISI-->
+  <!--MENU Laporan-->
       <a onclick="myAccFunc3()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn3">
-        Absensi <i class="fa fa-caret-down"></i>
+        Report <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         {{-- <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
@@ -63,12 +63,11 @@
 
    <!--MENU PENGATURAN-->
         <a onclick="myAccFunc4()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn4">
-          Pengaturan <i class="fa fa-caret-down"></i>
+          Personal <i class="fa fa-caret-down"></i>
         </a>
         <div id="Acc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-          <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Karyawan</a>
-          <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Absensi</a>
-          <a href="/pengaturan/gaji" class="w3-bar-item w3-button">Gaji</a>
+          <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Calendar</a>
+          <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Leads</a>
           <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Inventaris</a>
           <a href="{{ route('logout') }}" class="w3-button w3-block w3-white w3-left-align" id="myBtn5" onclick="event.preventDefault();
 				   document.getElementById('logout-form').submit();">
@@ -83,7 +82,7 @@
 
   <!-- Top menu on small screens -->
   <header class="w3-bar w3-top w3-hide-large w3-blue w3-xlarge">
-    <div class="w3-bar-item w3-padding-24 w3-wide">GADING MURNI</div>
+    <div class="w3-bar-item w3-padding-24 w3-wide">Exari</div>
     <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
   </header>
 

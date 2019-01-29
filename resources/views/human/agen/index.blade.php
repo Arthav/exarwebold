@@ -7,7 +7,7 @@ Exarweb - Daftar Agen
 @endsection
 
 @section('content')
-INDEX
+Agen
 @endsection
 
 
@@ -91,8 +91,5 @@ INDEX
     </div>
     <!--Akhir Page Content-->
   </div>
-
-    <!-- Footer Copyright -->
-      <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Exari</a> 2019</a></div>
 
 @endsection

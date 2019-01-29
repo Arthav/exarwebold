@@ -3,11 +3,11 @@
 @extends('layouts.master')
 
 @section('title')
-INDEX
+Exarweb: Policy
 @endsection
 
 @section('content')
-INDEX
+Policy
 @endsection
 
 
@@ -22,22 +22,6 @@ INDEX
         <!--Awal Padding-->
 
 
-            <!-- FILTER CARI NAMA-->
-
-            <form action="{{ route('Human.Agen') }}" method="get">
-              <p><h5>Cari</h5></p>
-              <div class="w3-row-padding">
-                <div class="w3-half">
-                  <!-- <input class="w3-input" type="text" name="s" placeholder="cari berdasarkan nama"> -->
-                </div>
-                <div class="w3-half">
-                  <button type="submit" class="w3-btn w3-black">Cari</button>
-                </div>
-              </div>
-            </form>
-            <!-- AKHIR FILTER CARI NAMA -->
-
-
         <!--Akhir Padding-->
         </div>
 
@@ -47,22 +31,12 @@ INDEX
             <table class="w3-table-all">
               <tr>
                 <th>Nama Kebijakan</th>
-                <th>Komisi Min</th>
-                <th>Komisi Max</th>
-                <th>Co-Buy</th>
-                <th>Co-Selling</th>
-                <th>Co-Broke</th>
-                <th>Referensi</th>
+                <th>Pembagian komisi dengan perusahaan</th>
               </tr>
               @foreach($bijaks as $bijak)
               <tr>
-              <td>{{$bijak->nama}}</td>
-              <td>{{$bijak->commission_min}}%</td>
-              <td>{{$bijak->commission_max}}%</td>
-              <td>{{$bijak->co_buy}}</td>
-              <td>{{$bijak->co_sell}}</td>
-              <td>{{$bijak->out_broke}}</td>
-              <td>{{$bijak->reference}}</td>
+              <td><a href="{{ route('Human.Policy.Show', ['id' => $bijak->id]) }}">{{$bijak->nama}}</td>
+              <td>{{$bijak->split_fee}}%</td>
               
              
               

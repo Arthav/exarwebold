@@ -34,12 +34,11 @@ class AgenController extends Controller
         $mroles=mrole::all();
         return view('human.agen.tambah',compact('mroles'));
     }
-
-   
+ 
 
     Public function ubah_agen(Request $request, $id)
     {
-      // $karyawan->nama_kolom = isi tabel;
+      
       $user = user::find($id);
       $mroles=mrole::all();
 
@@ -59,23 +58,40 @@ class AgenController extends Controller
       $agen = user::find($id);
 
     //   return redirect()->route('Human.Agen.Show', ['id' => $id],compact('user','mroles'));
-    return view('human.agen.show',compact('agen','mroles'));
+    return redirect()->route('Human.Agen.Show', ['id' => $id]);
     }
 
+    Public function simpan_agen(Request $request)
+    {
+     
+      $user = new user;
+
+      //Data Pribadi = 11
+      $user->name = $request->nama ;
+      $user->mrole_id = $request->id_jabatan ;
+      $user->email = $request->email ;
+      $user->alamat = $request->alamat ;
+      $user->nik = $request->nik ;
+      $user->telp1 = $request->telp1 ;
+      $user->telp2 = $request->telp2 ;
+      $user->agama = $request->agama ;
+      $user->jeniskelamin = $request->jeniskelamin ;
+      $user->npwp = $request->npwp ;
+      $user->password = bcrypt($request->password) ;
+      
+      $user->save();
+      return redirect()->route('Human.Agen');
+    }
     
 
     Public function hapus_agen(Request $request, $id)
     {
-        $s = $request->input('s');
-        $agens=user::where('delet','0')->orderBy('id')->search($s)->paginate(10);
-        $mroles=mrole::all();
+       
 
         $user = user::find($id);
         $user->delet = '1' ;
         $user->save();
 
-        $agen = user::find($id);
-        // return redirect()->route('human.agen.show');
-        return view('human.agen.index',compact('agens','mroles'));
+        return redirect()->route('Human.Agen');
     }
 }

@@ -36,25 +36,27 @@ Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
 //agen
 Route::get('/agen', 'AgenController@index')->name('Human.Agen');
-Route::get('/agen/{id}', 'AgenController@show_agen')->name('Human.Agen.Show');
+Route::get('/agen/{id}', 'AgenController@show_agen')->name('Human.Agen.Show')->where('id', '[0-9]+');
 Route::get('/agen/tambah', 'AgenController@tambah_agen')->name('Human.Agen.Tambah');
-Route::put('/agen/{id}/ubah', 'AgenController@ubah_agen')->name('Human.Agen.Ubah');
+Route::put('/agen/{id}/ubah', 'AgenController@ubah_agen')->name('Human.Agen.Ubah')->where('id', '[0-9]+');
 Route::post('/agen/simpan', 'AgenController@simpan_agen')->name('Human.Agen.Simpan');
-Route::put('/agen/{id}/hapus', 'AgenController@hapus_agen')->name('Human.Agen.Hapus');
+Route::put('/agen/{id}/hapus', 'AgenController@hapus_agen')->name('Human.Agen.Hapus')->where('id', '[0-9]+');
 
 //jabatan
-Route::get('/jabatan', 'RoleController@jabatan')->name('Human.Jabatan');
-Route::get('/jabatan/{id}', 'RoleController@jabatan')->name('Human.Jabatan.Show');
-Route::get('/jabatan/{id}/ubah', 'RoleController@ubah_jabatan')->name('Human.Jabatan.Ubah');
+Route::get('/jabatan', 'RoleController@index')->name('Human.Jabatan');
+Route::get('/jabatan/{id}', 'RoleController@show_jabatan')->name('Human.Jabatan.Show')->where('id', '[0-9]+');
 Route::get('/jabatan/tambah', 'RoleController@tambah_jabatan')->name('Human.Jabatan.Tambah');
-Route::put('/jabatan/{id}/hapus', 'RoleController@jabatan')->name('Human.Jabatan.Hapus');
+Route::put('/jabatan/{id}/ubah', 'RoleController@ubah_jabatan')->name('Human.Jabatan.Ubah')->where('id', '[0-9]+');
+Route::post('/jabatan/simpan', 'RoleController@simpan_jabatan')->name('Human.Jabatan.Simpan');
+Route::put('/jabatan/{id}/hapus', 'RoleController@hapus_jabatan')->name('Human.Jabatan.Hapus')->where('id', '[0-9]+');
 
 //policy
-Route::get('/policy', 'HumanController@policy')->name('Human.Policy');
-Route::get('/policy/{id}', 'HumanController@ubah_policy')->name('Human.Policy.Ubah');
-Route::get('/policy/{id}/ubah', 'HumanController@ubah_policy')->name('Human.Policy.Ubah');
-Route::get('/policy/tambah', 'HumanController@tamba_hpolicy')->name('Human.Policy.Tambah');
-Route::get('/policy/{id}/hapus', 'HumanController@tamba_hpolicy')->name('Human.Policy.Tambah');
+Route::get('/policy', 'PolicyController@index')->name('Human.Policy');
+Route::get('/policy/{id}', 'PolicyController@show_policy')->name('Human.Policy.Show')->where('id', '[0-9]+');
+Route::get('/policy/tambah', 'PolicyController@tambah_policy')->name('Human.Policy.Tambah');
+Route::put('/policy/{id}/ubah', 'PolicyController@ubah_policy')->name('Human.Policy.Ubah')->where('id', '[0-9]+');
+Route::post('/policy/simpan', 'PolicyController@simpan_policy')->name('Human.Policy.Simpan');
+Route::put('/policy/{id}/hapus', 'PolicyController@hapus_policy')->name('Human.Policy.Hapus')->where('id', '[0-9]+');
 
 
 
@@ -63,5 +65,16 @@ Route::get('/policy/{id}/hapus', 'HumanController@tamba_hpolicy')->name('Human.P
 //Report
 //------------------------------------------------------------------------------------------------------------------------
 
-Route::get('/listing', 'ListingController@index')->name('Listing_Default');
-Route::get('/listing/show', 'ListingController@show')->name('Listing.Show');
+Route::get('/report', 'ReportController@index')->name('Report.Index');
+Route::get('/report/penjualan/agen', 'ReportController@penjualan_agen')->name('Report.Penjualan.Agen');
+Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
+Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');
+Route::get('/report/komisi/saya', 'ReportController@komisi_saya')->name('Report.Komisi.Saya');
+
+
+
+
+
+
+
+

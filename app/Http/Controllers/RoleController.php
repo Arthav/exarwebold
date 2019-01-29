@@ -10,26 +10,64 @@ Use App\User;
 
 class RoleController extends Controller
 {
-    Public function jabatan()
+  
+    Public function index()
     {
-        $jabats=mrole::all();
+        $jabats=mrole::where('delet','0')->get();
         // dd($jabats->toarray());
         return view('human.jabatan.index',compact('jabats'));
     }
 
+    Public function show_jabatan($id)
+    {
+        $jabats=mrole::find($id);
+        $bijaks=mpolicy::all();        
+        return view('human.jabatan.show',compact('jabats','bijaks'));
+    }
+
     Public function tambah_jabatan()
     {
-        return view('human.jabatan.tambah');
+        $policy=mpolicy::all();    
+        return view('human.jabatan.tambah',compact('policy'));
+    }   
+
+    Public function ubah_jabatan(Request $request, $id)
+    {
+      
+      $mrole = mrole::find($id);
+
+      //Data Pribadi = 10
+      $mrole->nama = $request->nama ;
+      $mrole->level = $request->level ;
+      $mrole->mpolicy_id = $request->mpolicy_id ;
+      
+      $mrole->save();
+      return redirect()->route('Human.Jabatan.Show', ['id' => $id]);
     }
 
-    Public function ubah_jabatan()
+    Public function simpan_jabatan(Request $request)
     {
-        return view('human.jabatan.ubah');
+     
+      $mrole = new mrole;
+
+      //Data jabatan = 3
+      $mrole->nama = $request->nama ;
+      $mrole->level = $request->level ;
+      $mrole->mpolicy_id = $request->mpolicy_id ;
+      
+      $mrole->save();
+      return redirect()->route('Human.Jabatan');
     }
 
-    Public function hapus_jabatan()
-    {
-        return view('human.jabatan.ubah');
+    
+
+    Public function hapus_jabatan(Request $request, $id)
+    {      
+        $mrole = mrole::find($id);
+        $mrole->delet = '1' ;
+        $mrole->save();
+
+        return redirect()->route('Human.Jabatan');
     }
 
 }

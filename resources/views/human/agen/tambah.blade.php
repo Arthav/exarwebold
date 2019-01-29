@@ -82,8 +82,8 @@ Daftar User Baru
     
   <p>
   <label>Jabatan</label>
-  <select class="w3-select w3-border" name="nama_jabatan">
-    <option value="" disabled selected>Jabatan</option>
+  <select class="w3-select w3-border" name="id_jabatan">
+    <option value="3" disabled selected>Jabatan</option>
     @foreach ($mroles as $mrole)
       <option value="{{ $mrole->id }}">{{ $mrole->nama}}</option>
     @endforeach
@@ -95,8 +95,7 @@ Daftar User Baru
     <input class="w3-input" name="password" type="password"></p>
 
 
-
-    <input type="submit" name="submit" value="Create">
+    <input type="submit" class="w3-button w3-red w3-round-large" name="submit" value="Add New Member">
     {{ csrf_field() }}
   </form>
 
@@ -107,8 +106,6 @@ Daftar User Baru
   </div>
 
       <!--bagian warna hitam-->
-
-  <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Gading Murni</a> 2018</a></div>
 
   <!-- End page content -->
 </div>

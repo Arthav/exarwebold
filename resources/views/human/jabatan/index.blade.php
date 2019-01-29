@@ -1,13 +1,13 @@
 <!-- DONE -->
-<!-- Agen list-->
+<!-- Jabatan list-->
 @extends('layouts.master')
 
 @section('title')
-INDEX
+Exarweb: Jabatan
 @endsection
 
 @section('content')
-INDEX
+Jabatan
 @endsection
 
 
@@ -18,30 +18,13 @@ INDEX
     <div class="w3-container w3-blue w3-padding-32">
       <div class="W3-container">
 
-        <h2>Jabatan</h2>
+        <h2>Daftar Jabatan dan Wewenang</h2>
         <!--Awal Padding-->
-
-
-            <!-- FILTER CARI NAMA-->
-
-            <form action="{{ route('Human.Agen') }}" method="get">
-              <p><h5>Cari</h5></p>
-              <div class="w3-row-padding">
-                <div class="w3-half">
-                  <!-- <input class="w3-input" type="text" name="s" placeholder="cari berdasarkan nama"> -->
-                </div>
-                <div class="w3-half">
-                  <button type="submit" class="w3-btn w3-black">Cari</button>
-                </div>
-              </div>
-            </form>
-            <!-- AKHIR FILTER CARI NAMA -->
-
 
         <!--Akhir Padding-->
         </div>
 
-        <!-- TABLE AGEN -->
+        <!-- TABLE Jabatan -->
         <p>
           <div class="w3-responsive" style=color:black>
             <table class="w3-table-all">
@@ -52,7 +35,7 @@ INDEX
               </tr>
               @foreach($jabats as $jabat)
               <tr>
-              <td>{{$jabat->nama}}</td>
+              <td><a href="{{ route('Human.Jabatan.Show', ['id' => $jabat->id]) }}">{{$jabat->nama}}</td>
               <td>{{$jabat->level}}</td>
               
              
@@ -72,7 +55,7 @@ INDEX
 
 
 
-        <!--Tombol Tambah AGEN-->
+        <!--Tombol Tambah Jabatan-->
         <p>
         <a class="w3-btn w3-black" href="{{ route('Human.Jabatan.Tambah') }}">Tambah Baru</a>
         </p>

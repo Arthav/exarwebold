@@ -18,8 +18,8 @@ class CreateMrolesTable extends Migration
             $table->string('nama')->nullable();
             $table->string('level')->nullable();
             $table->string('delet')->nullable();
-            $table->unsignedInteger('mpolicie_id')->nullable();
-            $table->foreign('mpolicie_id')->references('id')->on('mpolicies')->onUpdate('cascade')->onDelete('cascade');
+            $table->unsignedInteger('mpolicy_id')->nullable();
+            $table->foreign('mpolicy_id')->references('id')->on('mpolicies')->onUpdate('cascade')->onDelete('cascade');
             
 
             $table->timestamps();
