@@ -75,16 +75,6 @@ class ExarSeeder extends Seeder
               ]
             ]);
   
-            DB::table('mbonus')->insert([
-  
-              [
-                'id' => '1',
-                'bonus' => '1000000',
-                'nama_bonus' => 'Bonus jual 3 apartment',
-                'deskripsi' => 'Bonus diberikan ketika agen berhasil menjualkan 3 apartment dalam kurun waktu satu hari',
-                'delet' => '0',
-              ]
-            ]);
   
             DB::table('users')->insert([
   
@@ -132,17 +122,7 @@ class ExarSeeder extends Seeder
               ]
             ]);
   
-            DB::table('mtransactions')->insert([
-  
-              [
-                'id' => '1',
-                'property_sold' => '1',
-                'delet' => '0',
-                'user_id' => '1',   
-                'close_price' => '1000000000',
-                'mlisting_id' => '1',
-              ]
-            ]);
+          
   
             
             DB::table('mlistings')->insert([
@@ -176,6 +156,22 @@ class ExarSeeder extends Seeder
               ]
             ]);
   
+            DB::table('mtransactions')->insert([
+  
+              [
+                'id' => '1',
+                'property_sold' => '1',
+                'delet' => '0',
+                'co_broke' => 'no',
+                'reference' => 'no',
+                'final_commission' => '3',
+                'split_fee' => '50',
+                'co_fee' => '50',
+                'reference_fee' => '20',
+                'close_price' => '1000000000',
+                'mlisting_id' => '1',
+              ]
+            ]);
             
   
   

@@ -23,10 +23,11 @@ class CreateMtransactionsTable extends Migration
             $table->Integer('split_fee')->nullable();
             $table->Integer('co_fee')->nullable();
             $table->Integer('reference_fee')->nullable();
+            $table->Integer('cobroke_id')->nullable();
             $table->Integer('delet')->default('0');
             $table->unsignedInteger('mlisting_id')->nullable();
             $table->foreign('mlisting_id')->references('id')->on('mlistings')->onUpdate('cascade')->onDelete('cascade');
-            $table->Integer('co_broke_id')->nullable();
+            
             $table->timestamps();
         });
     }

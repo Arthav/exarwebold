@@ -65,7 +65,7 @@ Route::put('/policy/{id}/hapus', 'PolicyController@hapus_policy')->name('Human.P
 //Report
 //------------------------------------------------------------------------------------------------------------------------
 
-Route::get('/report', 'ReportController@index')->name('Report.Index');
+
 Route::get('/report/penjualan/agen', 'ReportController@penjualan_agen')->name('Report.Penjualan.Agen');
 Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
 Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');

@@ -42,10 +42,7 @@ class CreateMlistingsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedInteger('mdeveloper_id')->nullable();
             $table->foreign('mdeveloper_id')->references('id')->on('mdevelopers')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedInteger('mbonu_id')->nullable();
-            $table->foreign('mbonu_id')->references('id')->on('mbonus')->onUpdate('cascade')->onDelete('cascade');
-       
-            
+                      
             $table->timestamps();   
         });
     }

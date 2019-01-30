@@ -22,14 +22,17 @@
 
 
   <!-- Sidebar/menu -->
-  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
-    <div class="w3-container w3-display-container w3-padding-16">
+  <nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar" >
+    <div class="w3-container w3-display-container w3-padding-16" >
       <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
       <h3 class="w3-wide"><b>Exari</b></h3>
+      <hr>
+      <h5 class="w3-wide">Property System</h5>
     </div>
+    
 
 
-    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold" >
   <!--MENU LISTING-->
       <a onclick="myAccFunc1()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn1">
         <b>Listing</b> <i class="fa fa-caret-down"></i>
@@ -55,20 +58,20 @@
         Report <i class="fa fa-caret-down"></i>
       </a>
       <div id="Acc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-        {{-- <a href="{{ route('Human.Agen') }}" class="w3-bar-item w3-button">Daftar Agen</a>
-        <a href="{{ route('Human.Agen.Tambah') }}" class="w3-bar-item w3-button">Tambah Agen Baru</a>
-        <a href="{{ route('Human.Jabatan') }}" class="w3-bar-item w3-button">Jabatan</a>
-         --}}
+        <a href="{{ route('Report.Penjualan.Agen') }}" class="w3-bar-item w3-button">Penjualan Agen</a>
+        <a href="{{ route('Report.Penjualan.Saya') }}" class="w3-bar-item w3-button">Penjualan Saya</a>
+        <a href="{{ route('Report.Komisi.Agen') }}" class="w3-bar-item w3-button">Komisi Agen</a>
+        <a href="{{ route('Report.Komisi.Saya') }}" class="w3-bar-item w3-button">Komisi Saya</a>
       </div>
 
    <!--MENU PENGATURAN-->
         <a onclick="myAccFunc4()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn4">
-          Personal <i class="fa fa-caret-down"></i>
+          Others <i class="fa fa-caret-down"></i>
         </a>
         <div id="Acc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
           <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Calendar</a>
           <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Leads</a>
-          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Inventaris</a>
+          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Developer</a>
           <a href="{{ route('logout') }}" class="w3-button w3-block w3-white w3-left-align" id="myBtn5" onclick="event.preventDefault();
 				   document.getElementById('logout-form').submit();">
 	           {{ __('Logout') }}
