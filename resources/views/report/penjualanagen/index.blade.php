@@ -18,7 +18,7 @@ Laporan Listing Properti
     <div class="w3-container w3-blue w3-padding-32">
       <div class="W3-container">
 
-        <h2>Daftar Agen</h2>
+        <h2>Overview</h2>
         <!--Awal Padding-->
 
         <!--Akhir Padding-->
@@ -30,18 +30,19 @@ Laporan Listing Properti
             <table class="w3-table-all">
               <tr>
                 <th>Nama agen</th>
-                <th>Jumlah Listing</th>
-                <th>Alamat</th>
-                <th>NIK</th>
-                <th>Jabatan</th>
+                <th>Jumlah Listing Aktif</th>
+                <th>Jumlah Penjualan</th>
+                <th>Total Komisi Agen</th>
+                <th>Total Komisi Perusahaan</th>
               </tr>
-              @foreach($agens as $agen)
+              @foreach($overview as $over)
               <tr>
-              <td><a href="{{ route('Human.Agen.Show', ['id' => $agen->id]) }}">{{$agen->name}}</td>
-              <td>{{$agen->email}}</td>
-              <td>{{$agen->alamat}}</td>
-              <td>{{$agen->nik}}</td>
-              <td>{{$agen->mrole['nama']}}</td>
+              <td><a href="{{ route('Report.Penjualan.Agen.Show', ['id' => $over->id]) }}">{{$over->name}}</td>
+              <td>{{$over->ListNow}}</td>
+              <td>{{$over->ListSold}}</td>
+              <td>Rp.{{$over->KomisiBersih}}</td>
+              <td>Rp.{{$over->KomisiPerusahaan}}</td>
+              
              
               
               </tr>
@@ -57,12 +58,10 @@ Laporan Listing Properti
 
 
 
+        {{-- Tombol Download --}}
+        <a href="{{ route('Report.Overview.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
 
 
-        <!--Tombol Tambah AGEN-->
-        <p>
-        <a class="w3-btn w3-black" href="{{ route('Human.Agen.Tambah') }}">Tambah Baru</a>
-        </p>
 
 
 

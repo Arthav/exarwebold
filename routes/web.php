@@ -66,7 +66,9 @@ Route::put('/policy/{id}/hapus', 'PolicyController@hapus_policy')->name('Human.P
 //------------------------------------------------------------------------------------------------------------------------
 
 
+Route::get('download', 'ReportController@download_overview')->name('Report.Overview.Download');
 Route::get('/report/penjualan/agen', 'ReportController@penjualan_agen')->name('Report.Penjualan.Agen');
+Route::get('/report/penjualan/agen/show/{id}', 'ReportController@penjualan_agen_show')->name('Report.Penjualan.Agen.Show');
 Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
 Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');
 Route::get('/report/komisi/saya', 'ReportController@komisi_saya')->name('Report.Komisi.Saya');

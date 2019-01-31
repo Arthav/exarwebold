@@ -27,7 +27,7 @@
       <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
       <h3 class="w3-wide"><b>Exari</b></h3>
       <hr>
-      <h5 class="w3-wide">Property System</h5>
+      <h5 class="w3-wide">Property</h5>
     </div>
     
 

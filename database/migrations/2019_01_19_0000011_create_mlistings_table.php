@@ -36,6 +36,7 @@ class CreateMlistingsTable extends Migration
             $table->longText('spesifikasi')->nullable();
             $table->string('kota')->nullable();
             $table->Integer('listrik')->nullable();
+            $table->string('legalitas')->nullable();
             $table->Integer('delet')->nullable();
             $table->Integer('sold')->default('0');;
             $table->unsignedInteger('user_id')->nullable();
