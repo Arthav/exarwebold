@@ -22,6 +22,7 @@ class CreateMpoliciesTable extends Migration
             $table->Integer('split_fee')->default('50');
             $table->Integer('co_fee')->default('50');
             $table->Integer('reference_fee')->default('20');
+            $table->Double('ppn')->default('10');
             $table->Integer('delete')->default('0');
 
             $table->timestamps();

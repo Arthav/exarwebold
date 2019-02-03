@@ -32,8 +32,10 @@ Laporan Listing Properti
                 <th>Nama agen</th>
                 <th>Jumlah Listing Aktif</th>
                 <th>Jumlah Penjualan</th>
-                <th>Total Komisi Agen</th>
-                <th>Total Komisi Perusahaan</th>
+                <th>Komisi Marketing</th>
+                <th>Komisi Agensi</th>
+                <th>PPH Komisi</th>
+                <th>Komisi Akhir Marketing</th>
               </tr>
               @foreach($overview as $over)
               <tr>
@@ -42,6 +44,9 @@ Laporan Listing Properti
               <td>{{$over->ListSold}}</td>
               <td>Rp.{{$over->KomisiBersih}}</td>
               <td>Rp.{{$over->KomisiPerusahaan}}</td>
+              <td>Rp.{{$over->Pajak}}</td>
+              <td>Rp.{{$over->komisiakir}}</td>
+              
               
              
               

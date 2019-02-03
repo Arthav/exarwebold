@@ -69,6 +69,7 @@
           Others <i class="fa fa-caret-down"></i>
         </a>
         <div id="Acc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Primary</a>    
           <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Calendar</a>
           <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Leads</a>
           <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Developer</a>

@@ -22,10 +22,23 @@ class ExarSeeder extends Seeder
               'split_fee' => '0',
               'co_fee' => '50',
               'reference_fee' => '20',
+              'ppn' => '2.5',
               'delete' => '0',
             ],
             [
               'id' => '2',
+              'nama' => 'Manager Policy',
+              'co_broke' => 'yes',
+              'reference' => 'yes',
+              'min_sell' => '0',
+              'split_fee' => '20',
+              'co_fee' => '50',
+              'reference_fee' => '20',
+              'ppn' => '2.5',
+              'delete' => '0',
+            ],
+            [
+              'id' => '3',
               'nama' => 'Default Agen Policy',
               'co_broke' => 'yes',
               'reference' => 'yes',
@@ -33,6 +46,19 @@ class ExarSeeder extends Seeder
               'split_fee' => '50',
               'co_fee' => '50',
               'reference_fee' => '20',
+              'ppn' => '2.5',
+              'delete' => '0',
+            ],
+            [
+              'id' => '4',
+              'nama' => 'Senior Marketing Policy',
+              'co_broke' => 'yes',
+              'reference' => 'yes',
+              'min_sell' => '1',
+              'split_fee' => '40',
+              'co_fee' => '50',
+              'reference_fee' => '20',
+              'ppn' => '2.5',
               'delete' => '0',
             ]
             
@@ -57,10 +83,17 @@ class ExarSeeder extends Seeder
               ],
               [
                 'id' => '3',
-                'nama' => 'Default Agen',
+                'nama' => 'Marketing Executive',
                 'level' => '2',
                 'delet' => '0',
-                'mpolicy_id' => '2',
+                'mpolicy_id' => '3',
+              ],
+              [
+                'id' => '4',
+                'nama' => 'Senior Marketing Executive',
+                'level' => '2',
+                'delet' => '0',
+                'mpolicy_id' => '4',
               ]
             ]);
   
@@ -116,7 +149,7 @@ class ExarSeeder extends Seeder
                 'telp1' => '49405340034',
                 'telp2' => '49203404040',
                 'jeniskelamin' => 'Wanita',
-                'mrole_id' => '2',
+                'mrole_id' => '3',
                 'password' => bcrypt('123123'),
                 'agama' => 'Buddha'
               ]
@@ -209,7 +242,7 @@ class ExarSeeder extends Seeder
                 'legalitas' => 'PPJB',
                 'delet' => '0',
                 'sold' => '1',
-                'user_id' => '1',
+                'user_id' => '3',
               ]
             ]);
   
@@ -227,6 +260,8 @@ class ExarSeeder extends Seeder
                 'reference_fee' => '20',
                 'close_price' => '30000000',
                 'mlisting_id' => '3',
+                'ppn' => '2.5',
+
               ]
             ]);
             

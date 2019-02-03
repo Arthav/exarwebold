@@ -35,14 +35,14 @@ Property list
 @foreach($mlistings as $list)
 <div class="grid-12">
     <div class="agenproperti-thumb">
-    <div class="agenproperti-gambar"><div class="ribbon best"><span>Hot</span></div>
-        <a href="http://www.agenpropertisurabaya.com/rumah/dijual-rumah-2-lantai-daerah-jemursari" title="Dijual Rumah 2 lantai daerah Jemursari">			<img class="lazy" src="http://www.agenpropertisurabaya.com/wp-content/themes/agenpropertisurabaya/agenpropertisurabaya/images/asli.gif" data-original="http://www.agenpropertisurabaya.com/wp-content/uploads/2018/09/PhotoGrid_1536294283448-124x83.jpg" alt="Dijual Rumah 2 lantai daerah Jemursari" width="124" height="83"/>
+    <div class="agenproperti-gambar"><div class="ribbon best"><span>Secondary</span></div>
+        <a href="{{ route('Listing.Show', ['id' => $list->id]) }}">	<img class="lazy" src="http://rumahpantura.com/wp-content/uploads/2016/10/Foto-rumah-sederhana-tapi-elegan.jpg" alt="Dijual Rumah 2 lantai daerah Jemursari" width="124" height="83"/>
           </a></div>
         <div class="agenproperti-title"><h2><a href="" title="">{{$list->nama}}</a></h2>
     <div class="agenproperti-harga">Rp.{{$list->price}},-</div>
     <div class="agenproperti-info">{{$list->lokasi}} <br/>
     Lt/Lb : {{$list->luas_tanah}} / {{$list->luas_bangunan}}<br/></div>
-    <a href="http://www.agenpropertisurabaya.com/rumah/dijual-rumah-2-lantai-daerah-jemursari" class="btn" >Lihat Detail &raquo;</a>
+    <a href="{{ route('Listing.Show', ['id' => $list->id]) }}" class="btn" >Lihat Detail &raquo;</a>
     </div>
     
     </div>

@@ -32,7 +32,7 @@ Laporan Listing
 
 @section('content2')
 
-<body onload="openDkaryawan(event, 'Data_pribadi');">
+<body onload="openDkaryawan(event, 'Listing');">
 
     <!-- Section 2 -->
       <div class="w3-container w3-blue w3-padding-32">
@@ -41,20 +41,97 @@ Laporan Listing
 
           <!-- tabulasi -->
           <div class="w3-row">
-            <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Data_pribadi');">
+            <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Listing');">
               <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Listing</div>
             </a>             
+            <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Semua_listing');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Semua</div>
+            </a>             
+            <a href="javascript:void(0)" onclick="openDkaryawan(event, 'Listing_terjual');">
+              <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Terjual</div>
+            </a>             
           </div>
-          
           <!-- Akhir tabulasi -->
+
+
+
+
+
+
+          <!-- isi tabs data listing -->
+          <div id="Listing" class="w3-container tabsdkaryawan" style="display:none"> 
+
+              <!-- TABLE -->
+              <p> 
+              <div class="w3-responsive" style=color:black>
+                  <table class="w3-table-all">
+                  <tr>
+                      <th>Nama List</th>
+                      <th>Jenis Listing</th>
+                      <th>Harga</th>
+                      <th>Jenis Properti</th>
+                      <th>Luas Bangunan</th>
+                      <th>Luas Tanah</th>
+                      <th>Lokasi</th>
+                      <th>KM</th>
+                      <th>KT</th>
+                      <th>Kota</th>
+                      <th>KWH Listrik</th>
+                  </tr>
+                  @foreach($availableview as $allview)
+                  <tr>
+                  <td>{{$allview->nama}} </td>    
+                  <td>{{$allview->jenis_list}} </td>
+                  <td>{{$allview->price}}</td>
+                  <td>{{$allview->jenis_properti}}</td>
+                  <td>{{$allview->luas_bangunan}} </td>
+                  <td>{{$allview->luas_tanah}} </td>
+                  <td>{{$allview->lokasi}} </td>
+                  <td>{{$allview->kamar_mandi}}</td>
+                  <td>{{$allview->kamar_tidur}} </td>
+                  <td>{{$allview->kota}} </td>
+                  <td>{{$allview->listrik}} </td>
+                  
+                  
+                  
+                  </tr>
+                  @endforeach
+        
+                      <tr>
+                        
+                      </tr>
+                    </table>
+                  </div>
+                </p>
+                <!--Akhir Table-->
+              
+              {{-- Tombol Download --}}
+           <a href="{{ route('Report.Listing.Available.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
+         
+           <!-- pagination -->
+           {{ $availableview->appends(Request::input())->links() }}
+
+           <!-- detail halaman -->
+           <h7> {{$availableview->total() }} total listing</h7>
+           <p><h8>In this page  ({{$availableview->count()}}) listing</h8></p>
+
+            </div>
+            <!-- akhir isi tabs --> 
+
+
+
+
+
+
+
+
+
+
           
-          <!-- isi tabs data jabatan -->
-          <div id="Data_pribadi" class="w3-container tabsdkaryawan" style="display:none">
-    
-          <h2>Data Listing: {{$agen->name}}</h2>
+          <!-- isi tabs semua listing -->
+          <div id="Semua_listing" class="w3-container tabsdkaryawan" style="display:none"> 
 
-
-            <!-- TABLE AGEN -->
+            <!-- TABLE -->
             <p> 
             <div class="w3-responsive" style=color:black>
                 <table class="w3-table-all">
@@ -97,10 +174,91 @@ Laporan Listing
               </p>
               <!--Akhir Table-->
             
+            {{-- Tombol Download --}}
+         <a href="{{ route('Report.Listing.Allview.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
             
+           <!-- pagination -->
+           {{ $allviews->appends(Request::input())->links() }}
+
+           <!-- detail halaman -->
+           <h7> {{$allviews->total() }} total listing</h7>
+           <p><h8>In this page  ({{$allviews->count()}}) listing</h8></p>
         
           </div>
-          <!-- akhir isi tabs data -->  
+          <!-- akhir isi tabs -->  
+
+
+
+
+
+
+           <!-- isi tabs data listing -->
+           <div id="Listing_terjual" class="w3-container tabsdkaryawan" style="display:none"> 
+
+              <!-- TABLE -->
+              <p> 
+              <div class="w3-responsive" style=color:black>
+                  <table class="w3-table-all">
+                  <tr>
+                      <th>Nama List</th>
+                      <th>Jenis Listing</th>
+                      <th>Harga</th>
+                      <th>Jenis Properti</th>
+                      <th>Luas Bangunan</th>
+                      <th>Luas Tanah</th>
+                      <th>Lokasi</th>
+                      <th>KM</th>
+                      <th>KT</th>
+                      <th>Kota</th>
+                      <th>KWH Listrik</th>
+                  </tr>
+                  @foreach($soldview as $allview)
+                  <tr>
+                  <td>{{$allview->nama}} </td>    
+                  <td>{{$allview->jenis_list}} </td>
+                  <td>{{$allview->price}}</td>
+                  <td>{{$allview->jenis_properti}}</td>
+                  <td>{{$allview->luas_bangunan}} </td>
+                  <td>{{$allview->luas_tanah}} </td>
+                  <td>{{$allview->lokasi}} </td>
+                  <td>{{$allview->kamar_mandi}}</td>
+                  <td>{{$allview->kamar_tidur}} </td>
+                  <td>{{$allview->kota}} </td>
+                  <td>{{$allview->listrik}} </td>
+                  
+                  
+                  </tr>
+                  @endforeach
+        
+                      <tr>
+                        
+                      </tr>
+                    </table>
+                  </div>
+                </p>
+                <!--Akhir Table-->
+              
+              {{-- Tombol Download --}}
+           <a href="{{ route('Report.Listing.Sold.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
+           
+           <!-- pagination -->
+           {{ $soldview->appends(Request::input())->links() }}
+
+           <!-- detail halaman -->
+           <h7> {{$soldview->total() }} total listing</h7>
+           <p><h8>In this page  ({{$soldview->count()}}) listing</h8></p>
+          
+            </div>
+            <!-- akhir isi tabs --> 
+
+
+
+
+
+
+
+
+
 
           </div>
         </div>
@@ -137,6 +295,8 @@ function handleChange(input) {
     if (input.value < 0) input.value = 0;
     if (input.value > 100) input.value = 100;
   }
+
+  
 
 </script>
 @endsection
