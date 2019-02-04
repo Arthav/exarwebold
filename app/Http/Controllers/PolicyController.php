@@ -11,7 +11,7 @@ class PolicyController extends Controller
 {
     Public function index()
     {        
-        $bijaks=mpolicy::where('delete','0')->get();
+        $bijaks=mpolicy::where('delete','0')->paginate(10);
         return view('human.policy.index',compact('bijaks'));
     }
 

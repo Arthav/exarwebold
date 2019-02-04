@@ -60,8 +60,6 @@
       <div id="Acc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="{{ route('Report.Penjualan.Agen') }}" class="w3-bar-item w3-button">Penjualan Agen</a>
         <a href="{{ route('Report.Penjualan.Saya') }}" class="w3-bar-item w3-button">Penjualan Saya</a>
-        <a href="{{ route('Report.Komisi.Agen') }}" class="w3-bar-item w3-button">Komisi Agen</a>
-        <a href="{{ route('Report.Komisi.Saya') }}" class="w3-bar-item w3-button">Komisi Saya</a>
       </div>
 
    <!--MENU PENGATURAN-->

@@ -60,6 +60,13 @@ Policy
         <a class="w3-btn w3-black" href="{{ route('Human.Policy.Tambah') }}">Tambah Baru</a>
         </p>
 
+        <!-- pagination -->
+        {{ $bijaks->appends(Request::input())->links() }}
+
+        <!-- detail halaman -->
+        <h7> {{$bijaks->total() }} total policy</h7>
+        <p><h8>In this page : ({{$bijaks->count()}})</h8></p>
+
 
 
 
@@ -70,8 +77,5 @@ Policy
     </div>
     <!--Akhir Page Content-->
   </div>
-
-    <!-- Footer Copyright -->
-      <div class="w3-blue w3-center w3-padding-24">Copyright <a href="www.google.com">Exari</a> 2019</a></div>
 
 @endsection

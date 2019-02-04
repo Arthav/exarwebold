@@ -13,7 +13,7 @@ class RoleController extends Controller
   
     Public function index()
     {
-        $jabats=mrole::where('delet','0')->get();
+        $jabats=mrole::where('delet','0')->paginate(10);
         // dd($jabats->toarray());
         return view('human.jabatan.index',compact('jabats'));
     }

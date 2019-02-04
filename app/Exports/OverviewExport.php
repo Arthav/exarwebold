@@ -61,8 +61,6 @@ class OverviewExport implements WithHeadings, ShouldAutoSize,FromCollection
             $query->where('mlistings.delet','=','0') 
                   ->orwherenull('mlistings.delet') ;
         })
-        ->whereMonth('mtransactions.created_at','=',$this->bulan)
-        ->whereYear('mtransactions.created_at','=',$this->tahun)
         ->groupBy('user_id','name','users.id','ppn')
         ->orderBy('users.id')
         ->get();

@@ -81,7 +81,12 @@ Agen
         <a class="w3-btn w3-black" href="{{ route('Human.Agen.Tambah') }}">Tambah Baru</a>
         </p>
 
+           <!-- pagination -->
+           {{ $agens->appends(Request::input())->links() }}
 
+           <!-- detail halaman -->
+           <h7> {{$agens->total() }} total agen</h7>
+           <p><h8>In this page : ({{$agens->count()}})</h8></p>
 
 
 

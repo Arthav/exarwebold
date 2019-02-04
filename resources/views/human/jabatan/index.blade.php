@@ -60,6 +60,13 @@ Jabatan
         <a class="w3-btn w3-black" href="{{ route('Human.Jabatan.Tambah') }}">Tambah Baru</a>
         </p>
 
+        <!-- pagination -->
+        {{ $jabats->appends(Request::input())->links() }}
+
+        <!-- detail halaman -->
+        <h7> {{$jabats->total() }} total jabatan</h7>
+        <p><h8>In this page : ({{$jabats->count()}})</h8></p>
+
 
 
 
