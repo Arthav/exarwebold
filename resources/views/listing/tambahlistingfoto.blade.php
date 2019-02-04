@@ -52,7 +52,9 @@ Tambah Listing
             </div>
             @if ($images)
             @foreach ($images as $img)
-              <img src="{{ url('/storage/mlisting/'.$img->id.'.png') }}" alt="foto listing" style="width:100%">
+              <p>
+                <img src="{{ url('/storage/mlisting/'.$img->id.'.png') }}" alt="foto listing" style="width:100%">
+              </p>
             @endforeach
           @endif
           </div>

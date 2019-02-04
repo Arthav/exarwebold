@@ -14,7 +14,7 @@ Tambah Listing
 
         <div class="w3-half w3-padding">
           <div class="w3-card-4">
-            <div class="w3-container w3-red">
+            <div class="w3-container w3-pale-green">
               <h2>Acara</h2>
             </div>
             @if ($errors->any())
