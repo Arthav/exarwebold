@@ -105,9 +105,7 @@ Laporan Listing
                 </p>
                 <!--Akhir Table-->
               
-              {{-- Tombol Download --}}
-           <a href="{{ route('Report.Listing.Available.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
-         
+             
            <!-- pagination -->
            {{ $availableview->appends(Request::input())->links() }}
 
@@ -174,8 +172,6 @@ Laporan Listing
               </p>
               <!--Akhir Table-->
             
-            {{-- Tombol Download --}}
-         <a href="{{ route('Report.Listing.Allview.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
             
            <!-- pagination -->
            {{ $allviews->appends(Request::input())->links() }}
@@ -238,9 +234,7 @@ Laporan Listing
                 </p>
                 <!--Akhir Table-->
               
-              {{-- Tombol Download --}}
-           <a href="{{ route('Report.Listing.Sold.Download') }}"class="w3-button w3-green w3-round-large">Download</a></p>
-           
+             
            <!-- pagination -->
            {{ $soldview->appends(Request::input())->links() }}
 

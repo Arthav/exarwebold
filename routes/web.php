@@ -25,7 +25,8 @@ Route::get('/testing', 'HomeController@testing')->name('testing');
 //------------------------------------------------------------------------------------------------------------------------
 
 Route::get('/listing', 'ListingController@index')->name('Listing_Default');
-Route::get('/listing/tambah', 'ListingController@show')->name('Listing.Tambah');
+Route::get('/listing/tambah', 'ListingController@tambah_listing')->name('Listing.Tambah');
+Route::get('/listing/simpan', 'ListingController@simpan_listing')->name('Listing.Simpan');
 Route::get('/listing/show', 'ListingController@show')->name('Listing.Show');
 Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
