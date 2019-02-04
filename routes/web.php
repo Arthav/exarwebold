@@ -26,7 +26,9 @@ Route::get('/testing', 'HomeController@testing')->name('testing');
 
 Route::get('/listing', 'ListingController@index')->name('Listing_Default');
 Route::get('/listing/tambah', 'ListingController@tambah_listing')->name('Listing.Tambah');
-Route::get('/listing/simpan', 'ListingController@simpan_listing')->name('Listing.Simpan');
+Route::post('/listing/simpan', 'ListingController@simpan_listing')->name('Listing.Simpan');
+Route::get('/listing/tambah/foto', 'ListingController@tambah_listing_foto')->name('Listing.Tambah.Foto');
+Route::post('/listing/simpan/foto', 'ListingController@simpan_listing_foto')->name('Listing.Simpan.Foto');
 Route::get('/listing/show', 'ListingController@show')->name('Listing.Show');
 Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
@@ -73,11 +75,3 @@ Route::get('/report/penjualan/agen/show/{id}', 'ReportController@penjualan_agen_
 Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
 Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');
 Route::get('/report/komisi/saya', 'ReportController@komisi_saya')->name('Report.Komisi.Saya');
-
-
-
-
-
-
-
-
