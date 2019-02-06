@@ -12,6 +12,7 @@ Tambah Listing
 @section('content2')
 <div class="w3-padding">
 
+        {{-- Header --}}
         <div class="w3-half w3-padding">
           <div class="w3-card-4">
             <div class="w3-container w3-pale-green">
@@ -29,6 +30,8 @@ Tambah Listing
                 </div>
 
             @endif
+
+            {{-- Form --}}
             <form enctype="multipart/form-data" class="w3-container" action="{{ route('Listing.Simpan.Foto') }}" method="post">
               <input hidden type="text" name="mlisting_id" value="{{ $mlisting->id }}">
               <p>
@@ -37,6 +40,7 @@ Tambah Listing
               @if ($errors->has('ml_img'))
                 <p> {{ $errors->first('ml_img') }} </p>
               @endif
+              
 
               <input type="submit" name="submit" value="Simpan Foto" class="w3-btn w3-green"></input>
               {{ csrf_field() }}
@@ -44,6 +48,7 @@ Tambah Listing
             <br><br>
           </div>
 
+          {{-- tampilan foto dikanan --}}
         </div>
         <div class="w3-half w3-padding">
           <div class="w3-card-4">

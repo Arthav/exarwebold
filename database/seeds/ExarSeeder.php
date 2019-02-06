@@ -325,7 +325,26 @@ class ExarSeeder extends Seeder
 
               ]
             ]);
-            
+
+            DB::table('images')->insert([
+  
+              [
+                'id' => '1',  
+                'mlisting_id'=>'1',
+              ],
+              [
+                'id' => '2',  
+                'mlisting_id'=>'2',
+              ],
+              [
+                'id' => '3',  
+                'mlisting_id'=>'3',
+              ],
+              [
+                'id' => '4',  
+                'mlisting_id'=>'4',
+              ]
+              ]);
   
   
             DB::table('mleads')->insert([

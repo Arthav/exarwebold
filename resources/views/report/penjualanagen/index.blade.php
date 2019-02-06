@@ -126,7 +126,7 @@ Laporan Listing Properti
                   </script>
 
         {{-- Tombol Download --}}
-        <a href="{{ route('Report.Overview.Download',['bulan'=>$bulan],['tahun'=>$tahun]) }}"class="w3-button w3-green w3-round-large">Download</a></p>
+        <a href="{{ route('Report.Overview.Download',['bulan'=>$bulan],['tahun'=>$tahun]) }}"class="w3-button w3-green w3-round-large">Export all data to excel</a></p>
       
         <!-- detail halaman -->
       <h7> {{$overview->total() }} total data</h7>

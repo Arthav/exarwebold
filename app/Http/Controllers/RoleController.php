@@ -28,7 +28,8 @@ class RoleController extends Controller
     Public function tambah_jabatan()
     {
         $policy=mpolicy::all();    
-        return view('human.jabatan.tambah',compact('policy'));
+        $bijaks=mpolicy::all(); 
+        return view('human.jabatan.tambah',compact('policy','bijaks'));
     }   
 
     Public function ubah_jabatan(Request $request, $id)

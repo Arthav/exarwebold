@@ -36,23 +36,19 @@ Property list
 <div class="grid-12">
     <div class="agenproperti-thumb">
     <div class="agenproperti-gambar"><div class="ribbon best"><span>Secondary</span></div>
-        <a href="{{ route('Listing.Show', ['id' => $list->id]) }}">	<img class="lazy" src="http://rumahpantura.com/wp-content/uploads/2016/10/Foto-rumah-sederhana-tapi-elegan.jpg" alt="Dijual Rumah 2 lantai daerah Jemursari" width="124" height="83"/>
+    <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}">	<img class="lazy" src="../storage/app/public/mlisting/{{$list->imageid}}.png" alt="{{$list->imageid}}" width="124" height="83"/>
           </a></div>
         <div class="agenproperti-title"><h2><a href="" title="">{{$list->nama}}</a></h2>
     <div class="agenproperti-harga">Rp.{{$list->price}},-</div>
     <div class="agenproperti-info">{{$list->lokasi}} <br/>
     Lt/Lb : {{$list->luas_tanah}} / {{$list->luas_bangunan}}<br/></div>
-    <a href="{{ route('Listing.Show', ['id' => $list->id]) }}" class="btn" >Lihat Detail &raquo;</a>
+    <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}" class="btn" >Lihat &raquo;</a>
     </div>
     
     </div>
 </div>
 
 @endforeach
-
-
-
-
 
 
 
@@ -83,7 +79,7 @@ Property list
 </script><style type="text/css">
 body{ margin:0px auto; padding:0px;
 background:;background-color:#ffffff ;background-position:center center ;background-attachment:scroll ;}
-a, h1, h2, h3, h4  {color:#2500fc;}
+a, h1, h2, h3, h4  {color:#000000;}
 .vtr-menu-icon {background-color: #2500fc;}
 .vtr-menu  {background-color: #2500fc;}
 .vtr-menu  li.active > a,.vtr-menu  li.active,.vtr-menu  li:hover > a {	background-color: #000;}
@@ -92,9 +88,9 @@ a, h1, h2, h3, h4  {color:#2500fc;}
 #widget-form .button {background:#2500fc;}
 .sidebar h4{background-color: #2500fc;}
 .sidebar .box ul li a:hover{ color: #2500fc; }
-.btn{ background-color: #2500fc; }
+.btn{ background-color: #31bf31; }
 .button-widget-link{color:#2500fc;}
-.vtr-title{color: #2500fc;}
+.vtr-title{color: #000000;}
 .footer a{color:#2500fc;border-top-color: #2500fc;}
 .vcard-name {color:#2500fc;}
 .vcard-footer {	background-color: #2500fc;}

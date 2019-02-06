@@ -23,7 +23,7 @@ Tambah Jabatan Baru
 
 <form class="w3-container" action="{{ route('Human.Jabatan.Simpan') }}" method="post">
   <p>
-  <label>Nama</label>
+  <label>Nama Jabatan</label>
   <input class="w3-input" name="nama" type="text"></p>
 
     <p>

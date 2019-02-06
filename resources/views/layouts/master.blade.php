@@ -82,6 +82,7 @@
     </div>
   </nav>
 
+
   <!-- Top menu on small screens -->
   <header class="w3-bar w3-top w3-hide-large w3-blue w3-xlarge">
     <div class="w3-bar-item w3-padding-24 w3-wide">Exari</div>

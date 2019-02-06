@@ -64,15 +64,15 @@ Tambah Kebijakan Baru
   <input class="w3-input" name="min_sell" type="text"></p>
 
   <p>
-  <label>Pembagian komisi penjualan dengan perusahaan (%)</label>
+  <label>Pembagian komisi penjualan dengan perusahaan (jumlah potongan dalam %)</label>
   <input class="w3-input" name="split_fee" type="text"></p>
 
   <p>
-  <label>Pembagian komisi untuk penjualan dengan Co-Broking (%)</label>
+  <label>Pembagian komisi untuk penjualan dengan Co-Broking (jumlah potongan dalam %)</label>
   <input class="w3-input" name="co_fee" type="text"></p>
 
   <p>
-  <label>Pembagian komisi untuk penjualan dengan referensi (%)</label>
+  <label>Pembagian komisi untuk penjualan dengan referensi (jumlah potongan dalam %)</label>
   <input class="w3-input" name="co_fee" type="text"></p>
 
 
