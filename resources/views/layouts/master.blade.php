@@ -29,7 +29,7 @@
       <hr>
       <h5 class="w3-wide">Property</h5>
     </div>
-    
+
 
 
     <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold" >
@@ -40,7 +40,7 @@
       <div id="Acc1" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="{{ route('Listing_Default') }}" class="w3-bar-item w3-button">Daftar Listing</a>
         <a href="{{ route('Listing.Tambah') }}" class="w3-bar-item w3-button">Tambah Listing</a>
-        <a href="{{ route('Listing.Show') }}" class="w3-bar-item w3-button">Sold Listing</a>
+        <a href="#" class="w3-bar-item w3-button">Sold Listing</a>
       </div>
 
     <!--MENU HUMAN RESOURCE-->
@@ -67,7 +67,7 @@
           Others <i class="fa fa-caret-down"></i>
         </a>
         <div id="Acc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Primary</a>    
+          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Primary</a>
           <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Calendar</a>
           <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Leads</a>
           <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Developer</a>

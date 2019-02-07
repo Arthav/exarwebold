@@ -28,7 +28,7 @@ Route::get('/listing/tambah', 'ListingController@tambah_listing')->name('Listing
 Route::post('/listing/simpan', 'ListingController@simpan_listing')->name('Listing.Simpan');
 Route::get('/listing/tambah/foto', 'ListingController@tambah_listing_foto')->name('Listing.Tambah.Foto');
 Route::post('/listing/simpan/foto', 'ListingController@simpan_listing_foto')->name('Listing.Simpan.Foto');
-Route::get('/listing/show', 'ListingController@show')->name('Listing.Show');
+Route::get('/listing/show/{id}', 'ListingController@show')->name('Listing.Show');
 Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
 
