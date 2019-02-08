@@ -21,19 +21,25 @@ class ListingController extends Controller
 
     public function show($id)
     {
-        dd($id);
+        // dd($id);
         $mlistings=mlisting::leftjoin('images','mlistings.id','=','mlisting_id')
-        ->selectRaw("mlistings.id,mlistings.nama,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at, images.id as imageid,mlisting_id")
+        ->selectRaw("mlistings.id,mlistings.nama as nama,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at, images.id as imageid,mlisting_id")
         ->groupBy("mlistings.id","mlistings.nama","mlistings.price","mlistings.commission","mlistings.nama_pemilik","mlistings.no_pemilik","mlistings.tipe_unit","mlistings.available_unit","mlistings.total_unit","mlistings.jenis_properti","mlistings.luas_bangunan","mlistings.luas_tanah","mlistings.tinggi","mlistings.lantai","mlistings.lokasi","mlistings.kamar_mandi","mlistings.kamar_tidur","mlistings.arah_properti","mlistings.spesifikasi","mlistings.kota","mlistings.listrik","mlistings.legalitas","mlistings.user_id","mlistings.mdeveloper_id","mlistings.created_at","images.id","mlisting_id")
         ->where("mlistings.id","=",$id)
-        ->get()
+        ->first()
         ;
+
         $listing1=image::all()
-        ->where("mlistings_id","=",$id)
-        ->take('1')
-        ->get()
+        ->where("mlisting_id","=",$id)
+        ->first()
         ;
-        return view('listing.show',compact('mlistings','listing1'));
+
+        $listing2=image::all()
+        ->where("mlisting_id","=",$id)
+        ;
+
+        // dd($listing1);
+        return view('listing.show',compact('mlistings','listing1','listing2'));
     }
 
     public function tambah_listing()

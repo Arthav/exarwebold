@@ -162,7 +162,7 @@ class ExarSeeder extends Seeder
   
               [
                 'id' => '1',
-                'nama' => 'Rumah wiyung',
+                'nama' => 'Rumah wiyung dijual cepat',
                 'jenis_list' => 'Dijual',
                 'price' => '1000000000',     
                 'commission' => '3',
@@ -343,6 +343,10 @@ class ExarSeeder extends Seeder
               [
                 'id' => '4',  
                 'mlisting_id'=>'4',
+              ],
+              [
+                'id' => '5',  
+                'mlisting_id'=>'1',
               ]
               ]);
   

@@ -106,18 +106,18 @@ a, h1, h2, h3, h4  {color:#000000;}
 	
 {{-- Image slider --}}
 <div class="boxer">
-	<div class="vtr-title"><h2>{{$mlisting->nama}}</h2></div>
+	<div class="vtr-title"><h2>{{$mlistings->nama}}</h2></div>
 	<div class="photo">
 			<div class="ribbon best"><span>Second</span></div>
-	              <a href="../storage/app/public/mlisting/{{$listing1->imageid}}.png">
-					<img src="../storage/app/public/mlisting/{{$listing1->imageid}}.png" width="683" height="400" /></a>  
+	              <a href="../exarweb/storage/app/public/mlisting/{{$listing1->id}}.png">
+					<img src="../exarweb/storage/app/public/mlisting/{{$listing1->id}}.png" alt="{{$listing1->id}}.png" width="683" height="400" /></a>  
 			            <div class="photo-slider">
                             <ul id="small-slider">
 
-                                @foreach($mlisting as $list)
+                                @foreach($listing2 as $list)
                                 <li>
-                                <a href="../storage/app/public/mlisting/{{$list->imageid}}.png" >
-                                <img src="../storage/app/public/mlisting/{{$list->imageid}}.png" alt=""/></a>
+                                <a href="../exarweb/storage/app/public/mlisting/{{$list->id}}.png" >
+                                <img src="../exarweb/storage/app/public/mlisting/{{$list->id}}.png" alt="{{$list->id}}.png"/></a>
                                 </li>
                                 @endforeach
                                 

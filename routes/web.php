@@ -28,7 +28,7 @@ Route::get('/listing/tambah', 'ListingController@tambah_listing')->name('Listing
 Route::post('/listing/simpan', 'ListingController@simpan_listing')->name('Listing.Simpan');
 Route::get('/listing/tambah/foto', 'ListingController@tambah_listing_foto')->name('Listing.Tambah.Foto');
 Route::post('/listing/simpan/foto', 'ListingController@simpan_listing_foto')->name('Listing.Simpan.Foto');
-Route::get('/listing/show/{id}', 'ListingController@show')->name('Listing.Show');
+Route::get('/listing/show/{id}', 'ListingController@show')->name('Listing.Show')->where('id', '[0-9]+');
 Route::get('/listing/ubah', 'ListingController@show')->name('Listing.Ubah');
 
 
@@ -70,7 +70,7 @@ Route::put('/policy/{id}/hapus', 'PolicyController@hapus_policy')->name('Human.P
 
 Route::get('download', 'ReportController@download_overview')->name('Report.Overview.Download');
 Route::get('/report/penjualan/agen', 'ReportController@penjualan_agen')->name('Report.Penjualan.Agen');
-Route::get('/report/penjualan/agen/show/{id}', 'ReportController@penjualan_agen_show')->name('Report.Penjualan.Agen.Show');
+Route::get('/report/penjualan/agen/show/{id}', 'ReportController@penjualan_agen_show')->name('Report.Penjualan.Agen.Show')->where('id', '[0-9]+');
 Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
 Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');
 Route::get('/report/komisi/saya', 'ReportController@komisi_saya')->name('Report.Komisi.Saya');
