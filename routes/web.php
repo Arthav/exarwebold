@@ -74,3 +74,33 @@ Route::get('/report/penjualan/agen/show/{id}', 'ReportController@penjualan_agen_
 Route::get('/report/penjualan/saya', 'ReportController@penjualan_saya')->name('Report.Penjualan.Saya');
 Route::get('/report/komisi/agen', 'ReportController@komisi_agen')->name('Report.Komisi.Agen');
 Route::get('/report/komisi/saya', 'ReportController@komisi_saya')->name('Report.Komisi.Saya');
+
+
+
+//------------------------------------------------------------------------------------------------------------------------
+//Leads
+//------------------------------------------------------------------------------------------------------------------------
+
+
+Route::get('/leads', 'LeadsController@index')->name('Leads');
+Route::get('/leads/{id}', 'Leadscontroller@show_leads')->name('Leads.Show')->where('id', '[0-9]+');
+Route::get('/leads/tambah', 'Leadscontroller@tambah_leads')->name('Leads.Tambah');
+Route::put('/leads/{id}/ubah', 'Leadscontroller@ubah_leads')->name('Leads.Ubah')->where('id', '[0-9]+');
+Route::post('/leads/simpan', 'Leadscontroller@simpan_leads')->name('Leads.Simpan');
+Route::put('/leads/{id}/hapus', 'Leadscontroller@hapus_leads')->name('Leads.Hapus')->where('id', '[0-9]+');
+
+
+
+//------------------------------------------------------------------------------------------------------------------------
+//Developer
+//------------------------------------------------------------------------------------------------------------------------
+
+
+Route::get('/Dev', 'DevController@index')->name('Dev');
+Route::get('/Dev/{id}', 'Devcontroller@show_dev')->name('Dev.Show')->where('id', '[0-9]+');
+Route::get('/Dev/tambah', 'Devcontroller@tambah_dev')->name('Dev.Tambah');
+Route::put('/Dev/{id}/ubah', 'Devcontroller@ubah_dev')->name('Dev.Ubah')->where('id', '[0-9]+');
+Route::post('/Dev/simpan', 'Devcontroller@simpan_dev')->name('Dev.Simpan');
+Route::put('/Dev/{id}/hapus', 'Devcontroller@hapus_dev')->name('Dev.Hapus')->where('id', '[0-9]+');
+
+

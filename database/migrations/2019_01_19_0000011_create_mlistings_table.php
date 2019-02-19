@@ -37,8 +37,8 @@ class CreateMlistingsTable extends Migration
             $table->string('kota')->nullable();
             $table->Integer('listrik')->nullable();
             $table->string('legalitas')->nullable();
-            $table->Integer('delet')->nullable();
-            $table->Integer('sold')->default('0');;
+            $table->Integer('delet')->default('0');
+            $table->Integer('sold')->default('0');
             $table->unsignedInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedInteger('mdeveloper_id')->nullable();

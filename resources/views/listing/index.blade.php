@@ -36,7 +36,7 @@ Property list
 <div class="grid-12">
     <div class="agenproperti-thumb">
     <div class="agenproperti-gambar"><div class="ribbon best"><span>Secondary</span></div>
-    <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}">	<img class="lazy" src="../storage/app/public/mlisting/{{$list->imageid}}.png" alt="{{$list->imageid}}" width="124" height="83"/>
+    <a href="{{ route('Listing.Show', ['id' => $list->listid]) }}">	<img class="lazy" src="../storage/app/public/mlisting/{{$list->id}}.png" alt="{{$list->imageid}}" width="124" height="83"/>
           </a></div>
         <div class="agenproperti-title"><h2><a href="" title="">{{$list->nama}}</a></h2>
     <div class="agenproperti-harga">Rp.{{$list->price}},-</div>

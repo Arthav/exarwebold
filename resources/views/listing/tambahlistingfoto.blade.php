@@ -42,10 +42,14 @@ Tambah Listing
               @endif
               
 
-              <input type="submit" name="submit" value="Simpan Foto" class="w3-btn w3-green"></input>
+              <input type="submit" name="submit" value="Simpan Foto" class="w3-btn w3-green w3-round-large"></input>
               {{ csrf_field() }}
             </form>
             <br><br>
+            {{-- Tombol Kembali --}}
+             <a href="{{ route('Listing_Default') }}"class="w3-button w3-red w3-round-large">Selesai</a></p>
+             <br><br>
+           
           </div>
 
           {{-- tampilan foto dikanan --}}

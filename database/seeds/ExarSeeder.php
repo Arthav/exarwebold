@@ -329,23 +329,23 @@ class ExarSeeder extends Seeder
             DB::table('images')->insert([
   
               [
-                'id' => '1',  
+                'imageid' => '1',  
                 'mlisting_id'=>'1',
               ],
               [
-                'id' => '2',  
+                'imageid' => '2',  
                 'mlisting_id'=>'2',
               ],
               [
-                'id' => '3',  
+                'imageid' => '3',  
                 'mlisting_id'=>'3',
               ],
               [
-                'id' => '4',  
+                'imageid' => '4',  
                 'mlisting_id'=>'4',
               ],
               [
-                'id' => '5',  
+                'imageid' => '5',  
                 'mlisting_id'=>'1',
               ]
               ]);

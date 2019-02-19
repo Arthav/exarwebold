@@ -1,21 +1,39 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use App\Mlisting;
 use App\Image;
 use Auth;
+
 class ListingController extends Controller
 {
     public function index()
     {
         $mlistings=mlisting::leftjoin('images','mlistings.id','=','mlisting_id')
-        ->selectRaw("mlistings.id as listid,mlistings.nama,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at, images.id as imageid,mlisting_id")
-        ->groupBy("mlistings.id","mlistings.nama","mlistings.price","mlistings.commission","mlistings.nama_pemilik","mlistings.no_pemilik","mlistings.tipe_unit","mlistings.available_unit","mlistings.total_unit","mlistings.jenis_properti","mlistings.luas_bangunan","mlistings.luas_tanah","mlistings.tinggi","mlistings.lantai","mlistings.lokasi","mlistings.kamar_mandi","mlistings.kamar_tidur","mlistings.arah_properti","mlistings.spesifikasi","mlistings.kota","mlistings.listrik","mlistings.legalitas","mlistings.user_id","mlistings.mdeveloper_id","mlistings.created_at","images.id","mlisting_id")
+        ->selectRaw("mlistings.id as listid,mlistings.nama,price,commission,nama_pemilik,no_pemilik,tipe_unit,total_unit,available_unit,jenis_properti,luas_bangunan,luas_tanah,tinggi,lantai,lokasi,kamar_mandi,kamar_tidur,arah_properti,spesifikasi,kota,listrik,legalitas,user_id,mdeveloper_id,mlistings.created_at,imageid,mlisting_id")
+        ->groupBy("listid","mlistings.nama","mlistings.price","mlistings.commission","mlistings.nama_pemilik","mlistings.no_pemilik","mlistings.tipe_unit","mlistings.available_unit","mlistings.total_unit","mlistings.jenis_properti","mlistings.luas_bangunan","mlistings.luas_tanah","mlistings.tinggi","mlistings.lantai","mlistings.lokasi","mlistings.kamar_mandi","mlistings.kamar_tidur","mlistings.arah_properti","mlistings.spesifikasi","mlistings.kota","mlistings.listrik","mlistings.legalitas","mlistings.user_id","mlistings.mdeveloper_id","mlistings.created_at","imageid","mlisting_id")
         ->get()
         ;
+        // $listing1=image::all()->groupBy('mlisting_id');
+        // // dd($listing1);
+
+        // $mlistings=mlisting::all()
+        // ->leftjoinsub($listing1,'listing1', function ($join) {
+        //     $join->on('mlistings.id', '=', 'listing1.mlisting_id');
+        // })->get();
+
+            // $mlisting=DB::table('mlistings')->get();
+        
+            // $mlistings=mlisting::all()
+        // ->joinSub($listing1, 'listing1', function ($join) {
+        //     $join->on('mlistings.id', '=', 'listing1.mlisting_id');
+        // });   
+
         // dd($mlistings);
+        
         return view('listing.index',compact('mlistings'));
     }
 

@@ -15,7 +15,7 @@ Tambah Listing
         <div class="w3-half w3-padding">
           <div class="w3-card-4">
             <div class="w3-container w3-pale-green">
-              <h2>Acara</h2>
+              <h2>Data Listing</h2>
             </div>
             @if ($errors->any())
 
@@ -30,7 +30,7 @@ Tambah Listing
             @endif
             <form enctype="multipart/form-data" class="w3-container" action="{{ route('Listing.Simpan') }}" method="post">
               <p>
-              <label>Nama Listing</label>
+              <label>Judul Listing</label>
               <input required class="w3-input" type="text" name="nama" ></p>
               <p>
               <label>harga</label>

@@ -1,6 +1,5 @@
 
-<!-- DONE -->
-<!-- DETAIL Policy -->
+<!-- Report all -->
 
 <!---->
 
@@ -8,7 +7,7 @@
 @extends('layouts.master')
 
 @section('title')
-Exarweb - Laporan Penjualan
+Exarweb - Laporan 
 @endsection
 
 @section('content')

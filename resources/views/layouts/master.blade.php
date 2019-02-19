@@ -41,6 +41,7 @@
         <a href="{{ route('Listing_Default') }}" class="w3-bar-item w3-button">Daftar Listing</a>
         <a href="{{ route('Listing.Tambah') }}" class="w3-bar-item w3-button">Tambah Listing</a>
         <a href="#" class="w3-bar-item w3-button">Sold Listing</a>
+        <a href="#" class="w3-bar-item w3-button">Primary</a>
       </div>
 
     <!--MENU HUMAN RESOURCE-->
@@ -59,7 +60,6 @@
       </a>
       <div id="Acc3" class="w3-bar-block w3-hide w3-padding-large w3-medium">
         <a href="{{ route('Report.Penjualan.Agen') }}" class="w3-bar-item w3-button">Penjualan Agen</a>
-        <a href="{{ route('Report.Penjualan.Saya') }}" class="w3-bar-item w3-button">Penjualan Saya</a>
       </div>
 
    <!--MENU PENGATURAN-->
@@ -67,10 +67,9 @@
           Others <i class="fa fa-caret-down"></i>
         </a>
         <div id="Acc4" class="w3-bar-block w3-hide w3-padding-large w3-medium">
-          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Primary</a>
-          <a href="/pengaturan/karyawan" class="w3-bar-item w3-button">Calendar</a>
-          <a href="/pengaturan/absensi" class="w3-bar-item w3-button">Leads</a>
-          <a href="/pengaturan/inventaris" class="w3-bar-item w3-button">Developer</a>
+          <a href="{{ route('Leads') }}" class="w3-bar-item w3-button">Calendar</a>
+          <a href="{{ route('Leads') }}" class="w3-bar-item w3-button">Leads</a>
+          <a href="{{ route('Dev') }}" class="w3-bar-item w3-button">Developer</a>
           <a href="{{ route('logout') }}" class="w3-button w3-block w3-white w3-left-align" id="myBtn5" onclick="event.preventDefault();
 				   document.getElementById('logout-form').submit();">
 	           {{ __('Logout') }}
